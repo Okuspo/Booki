@@ -1,16 +1,81 @@
-#menu {
-    background-color: yellow;
+html {
+    font-family: 'Raleway', sans-serif;
 }
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color:#ecc3bf;
+    height: 100px;
+}
+
+
+nav img {
+    height: 90px;
+    width: auto;
+}
+
+#navlinks {
+    display: flex;
+    align-items: center;
+}
+
+#navlinks a:link, a:visited {
+    background-color: white;
+    color: #0065FC;
+    padding: 20px 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+#navlinks a:hover, a:active {
+    /* background-color: #0065FC; */
+    border-top: solid 2px #0065FC;
+}
+
+#welcome {
+    background-color: #f7d8bc;
+}
+
 
 #search {
-    background-color: red;
+    background-color:#b9e2da;
+    display: flex;
+    flex-direction: column;
 }
 
+#search_filters {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+#search_filters_title{
+    display:flex;
+    align-items: center;
+}
 .search_filter {
     background-color: tomato;
+    align-content: center;
+    margin: 1em;
+    padding: 1em;
+
 }
+
 
 .results_hosting_city_gallery_tile_details {
     color:tomato;
 }
 
+
+#results_hosting_city{
+    background-color: #b5d0e1;
+}
+
+#results_activities {
+    background-color: #e1cde9;
+}
+footer {
+    display: flex;
+    background-color: #cfd3d4;
+}

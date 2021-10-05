@@ -192,8 +192,9 @@ Conclusion : units I should focus on: %, em, rem, a bit of ch and viewport
 
 Liens utiles
 > https://stackoverflow.com/questions/7678883/is-it-better-to-define-images-in-direct-html-or-css <br>
-> [5 CSS mistakes that I see way too often](https://www.youtube.com/watch?v=iHEkRIF7zxI)
-
+> [5 CSS mistakes that I see way too often](https://www.youtube.com/watch?v=iHEkRIF7zxI)<br>
+> [5 mins about Media Queries](https://www.youtube.com/watch?v=2KL-z9A56SQ)<br>
+> [Responsive design](https://www.youtube.com/watch?v=bn-DQCifeQQ)
 
 Google fonts : ``<link>`` or ``@import`` : https://stackoverflow.com/questions/12316501/including-google-web-fonts-link-or-import
 > For 90%+ of the cases you likely want the ``<link>`` tag. As a rule of thumb, you want to avoid ``@import`` rules because they defer the loading of the included resource until the file is fetched.. and if you have a build process which "flattens" the @import's, then you create another problem with web fonts: dynamic providers like Google WebFonts serve platform-specific versions of the fonts, so if you simply inline the content, then you'll end up with broken fonts on some platforms.
@@ -204,9 +205,33 @@ Google fonts : ``<link>`` or ``@import`` : https://stackoverflow.com/questions/1
 
 ### Problèmes à régler
 
-- Il y a des marges autour de ma page (au moins en haut et sur les côtés) : trouver comment les retirer.
+- Il y a des marges autour de ma page (au moins en haut et sur les côtés) : trouver comment les retirer. -> Réglé, ajout de margin:0 et padding:0 sur tous les éléments dans le CSS.
+
 - La border-top sur les liens du menu décale le bouton vers le bas. <br>
 Solutions possible : mettre une bordure invisible/blanche sur les ``a:link, a:visited`` ou trouver un moyen de placer la bordure à l'intérieur
 - J'ai importé tous les styles de Raleway, ne pas oublier d'enlever ceux qui sont inutiles.
 
+### Historique des modifications du jour
 
+- **CSS** Ajout de variables pour les 3 couleurs principales et pour les 2 font-weight principales
+
+- **HTML/CSS**Ajout de commentaires dans le HTML et le CSS pour une meilleure lisibilité
+- **CSS** Ajout de paramètres globaux
+- **HTML/CSS**Première mise en forme des sections suivantes : Header, Welcome, Search
+- **HTML/CSS**Remplacement de "hosting" par "accommodation" dans le HTML et le CSS (CTRL + SHIFT + L pour modifier en bloc tous les éléments portant le même nom)
+
+- **CSS** Définition "en dur" une font-size par défaut à 16px, comme les spécifications demandent d'utiliser uniquement des px et des %, 
+- **CSS** Définition la font-weight (identique pour h1, h2, h3) et une font-size spécifique pour h1, h2, h3 (respectivement, 22px, 20px, 18px)
+- **CSS** Ajout d'une ``margin-left`` et ``margin-right`` sur le body à 3,50% (ratio mesuré sur Photoshop)
+- **CSS** Ajout d'une ``margin-bottom`` de 16px (1rem par rapport à ma font-size forcée ?) en dessous de chaque section.
+- **HTML** Suppression des id dans les tuiles, superflus (et super longs).
+
+### Problèmes à régler
+
+- La border-top sur les liens du menu décale le bouton vers le bas. <br>
+Solutions possible : mettre une bordure invisible/blanche sur les ``a:link, a:visited`` ou trouver un moyen de placer la bordure à l'intérieur
+- J'ai importé tous les styles de Raleway, ne pas oublier d'enlever ceux qui sont inutiles.
+- La hauteur du header et du logo sont complètement arbitraires
+- Balises ``article`` et ``picture`` découvertes. Documentation à lire sur le sujet. Article est une balise sémantique, probablement mieux qu'un div pour mes tuiles. Picture est a priori mieux que img car plus d'options pour les sites responsives (voir lesquelles et si utile dans le projet).
+
+- Visuellement on dirait que le div "Les plus populaires" est un enfant de "Hébergements à Marseille" (background rouge), or ils sont enfants du même parent. Revoir la hiérarchie, et retravailler les flexbox.

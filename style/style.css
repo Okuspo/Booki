@@ -1,6 +1,42 @@
-html {
-    font-family: 'Raleway', sans-serif;
+/* VARIABLES */
+:root {
+    --clr-blue: #0065FC;
+    --clr-light-blue: #DEEBFF;
+    --clr-light-grey: #F2F2F2;
+  
+    --fs-regular: 500;
+    --fs-bold: 700;
 }
+
+/* GENERAL SETTINGS */
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    font-weight: var(--fs-bold);
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+body {
+    margin-left: 3.50%;
+    margin-right: 3.50%;
+}
+/* HEADER SECTION */
 nav {
     display: flex;
     justify-content: space-between;
@@ -11,7 +47,7 @@ nav {
 
 
 nav img {
-    height: 90px;
+    height: 50px;
     width: auto;
 }
 
@@ -21,54 +57,120 @@ nav img {
 }
 
 #navlinks a:link, a:visited {
-    color: #0065FC;
-    padding: 20px 20px;
-    display: inline-block;
     text-decoration: none;
+    color: var(--clr-blue);
+    padding: 10px 10px;
+    display: block;
+    cursor: pointer;
+    
 }
 
 #navlinks a:hover, a:active {
-    /* background-color: #0065FC; */
-    border-top: solid 2px #0065FC;
+    border-top: 2px solid var(--clr-blue);
 }
-/*
-#welcome {
-    background-color: #f7d8bc;
-}
-*/
 
-#search {
-    background-color:#b9e2da;
+/* WELCOME SECTION */
+#welcome {
+    margin-bottom: 16px;
+}
+
+/* SEARCH SECTION */
+#search-container {
+    
     display: flex;
     flex-direction: column;
+    margin-bottom: 16px;
+}
+
+i.fas.fa-map-marker-alt {
+    color:black;
+    background-color: var(--clr-light-grey)        ;
+    font-size: 24px;
+    padding: 10px 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#search_input input {
+    border: none;
+    padding: 10px 10px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+#search_input_button {
+    background-color: var(--clr-blue);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 #search_filters {
     display: flex;
     flex-direction: row;
     align-content: center;
+    margin-bottom: 16px;
 }
 
 #search_filters_title{
     display:flex;
     align-items: center;
+    
+}
+
+.fas.fa-money-bill-wave,
+.fas.fa-child,
+.fas.fa-heart,
+.fas.fa-dog {
+    color:var(--clr-blue);
+    background-color: var(--clr-light-blue);
+    padding: 15px 15px;
+    border-radius: 100%;
+}
+
+.fas.fa-child {
+    padding: 15px 17px;
 }
 .search_filter {
-    background-color: tomato;
+    background-color: var(--clr-light-grey);
     align-content: center;
-    margin: 1em;
-    padding: 1em;
+    margin: 16px;
+    padding: 0 16px 0 0;
+    font-weight: var(--fs-bold);
+    border-radius: 100px;
+}
+
+/* RESULTS SECTION */
+
+#results_accommodation {
+    background-color: #b5d0e1;
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
+}
+
+#results_accommodation_city {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 16px;
+    border-radius: 10px;
+    margin-right: 32px;
+    background-color: red;
 
 }
 
-
-.results_hosting_city_gallery_tile_details {
+.results_accommodation_city_gallery_tile {
+    height: 100px;
+    width: 100px;
+}
+.results_accommodation_city_gallery_tile_details {
     color:tomato;
 }
 
-
-#results_hosting_city{
-    background-color: #b5d0e1;
+#results_accommodation_most_popular {
+    background-color:violet;
 }
 
 #results_activities {

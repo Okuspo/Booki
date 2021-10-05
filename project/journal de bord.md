@@ -197,3 +197,16 @@ Liens utiles
 
 Google fonts : ``<link>`` or ``@import`` : https://stackoverflow.com/questions/12316501/including-google-web-fonts-link-or-import
 > For 90%+ of the cases you likely want the ``<link>`` tag. As a rule of thumb, you want to avoid ``@import`` rules because they defer the loading of the included resource until the file is fetched.. and if you have a build process which "flattens" the @import's, then you create another problem with web fonts: dynamic providers like Google WebFonts serve platform-specific versions of the fonts, so if you simply inline the content, then you'll end up with broken fonts on some platforms.
+
+### GIT
+
+``git commit --amend`` pour éviter de faire 2 commits quand on a oublié des fichiers https://git-scm.com/book/fr/v2/Utilitaires-Git-R%C3%A9%C3%A9crire-l%E2%80%99historique
+
+### Problèmes à régler
+
+- Il y a des marges autour de ma page (au moins en haut et sur les côtés) : trouver comment les retirer.
+- La border-top sur les liens du menu décale le bouton vers le bas. <br>
+Solutions possible : mettre une bordure invisible/blanche sur les ``a:link, a:visited`` ou trouver un moyen de placer la bordure à l'intérieur
+- J'ai importé tous les styles de Raleway, ne pas oublier d'enlever ceux qui sont inutiles.
+
+

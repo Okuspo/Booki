@@ -215,10 +215,10 @@ Solutions possible : mettre une bordure invisible/blanche sur les ``a:link, a:vi
 
 - **CSS** Ajout de variables pour les 3 couleurs principales et pour les 2 font-weight principales
 
-- **HTML/CSS**Ajout de commentaires dans le HTML et le CSS pour une meilleure lisibilité
+- **HTML/CSS** Ajout de commentaires dans le HTML et le CSS pour une meilleure lisibilité
 - **CSS** Ajout de paramètres globaux
-- **HTML/CSS**Première mise en forme des sections suivantes : Header, Welcome, Search
-- **HTML/CSS**Remplacement de "hosting" par "accommodation" dans le HTML et le CSS (CTRL + SHIFT + L pour modifier en bloc tous les éléments portant le même nom)
+- **HTML/CSS** Première mise en forme des sections suivantes : Header, Welcome, Search
+- **HTML/CSS** Remplacement de "hosting" par "accommodation" dans le HTML et le CSS (CTRL + SHIFT + L pour modifier en bloc tous les éléments portant le même nom)
 
 - **CSS** Définition "en dur" une font-size par défaut à 16px, comme les spécifications demandent d'utiliser uniquement des px et des %, 
 - **CSS** Définition la font-weight (identique pour h1, h2, h3) et une font-size spécifique pour h1, h2, h3 (respectivement, 22px, 20px, 18px)

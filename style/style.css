@@ -58,7 +58,7 @@ nav img {
     align-items: center;
 }
 
-#navlinks a:link, a:visited {
+#navlinks a:link, #navlinks a:visited {
     text-decoration: none;
     color: var(--clr-blue);
     padding: 10px 10px;
@@ -67,7 +67,7 @@ nav img {
     
 }
 
-#navlinks a:hover, a:active {
+#navlinks a:hover, #navlinks a:active {
     border-top: 2px solid var(--clr-blue);
 }
 

@@ -1,6 +1,6 @@
 # OpenClassrooms | Développeur Front-End | Projet : Booki
 
-## Jour 1
+# Jour 1
 
 ### HTML
 - ` <meta charset="UTF-8">` -> ?
@@ -13,9 +13,6 @@ En revanche ça fonctionne sur le div que j'ai rajouté à l'intérieur. <br>
 Certains éléments HTML ne sont probablement pas censés être mis en forme car non affichés. A vérifier.
 
 ### GIT / GITHUB
-- Documentation GIT : https://git-scm.com/docs
-- GITHUB : Comprendre comment mon dossier local et le repo distant sont synchronisés
-- GITHUB : Quelle différence entre HTTPS et SSH pour la connexion à Github ?
 - GITHUB : Comprendre pourquoi la commande *push* fonctionne dans VS Code mais pas dans Github Desktop dans mon projet
 
 
@@ -35,7 +32,7 @@ Certains éléments HTML ne sont probablement pas censés être mis en forme car
 - Github CLI installé (https://cli.github.com/manual/index)
 
 
-## Jour 2
+# Jour 2
 
 ### HTML
 
@@ -235,3 +232,31 @@ Solutions possible : mettre une bordure invisible/blanche sur les ``a:link, a:vi
 - Balises ``article`` et ``picture`` découvertes. Documentation à lire sur le sujet. Article est une balise sémantique, probablement mieux qu'un div pour mes tuiles. Picture est a priori mieux que img car plus d'options pour les sites responsives (voir lesquelles et si utile dans le projet).
 
 - Visuellement on dirait que le div "Les plus populaires" est un enfant de "Hébergements à Marseille" (background rouge), or ils sont enfants du même parent. Revoir la hiérarchie, et retravailler les flexbox.
+
+# Jour 3
+
+Flexbox :
+
+**display: inline-flex**
+
+> If we didn’t want div elements to be block-level elements, we would use display: ``inline``. Flexbox, however, provides the ``inline-flex`` value for the display property, which allows us to create flex containers that **are also inline elements**.\
+[Codecademy - Learn intermediate CSS](https://www.codecademy.com/courses/learn-intermediate-css/)
+
+
+>In HTML programming, a block-level element is any element that starts a new line (e.g., paragraph) and uses the full width of the page or container. A block-level element can take up one line or multiple lines and has a line break before and after the element.
+https://www.computerhope.com/jargon/b/block-level-element.htm
+
+> ``display: inline-flex`` does not make flex items display inline. It makes **the flex container display inline**. That is the only difference between ``display: inline-flex`` and ``display: flex``. A similar comparison can be made between display: ``inline-block`` and ``display: block``, and pretty much any other display type that has an inline counterpart.\
+\
+**There is absolutely no difference in the effect on flex items**; flex layout is identical whether the flex container is block-level or inline-level. In particular, the flex items themselves always behave like block-level boxes (although they do have some properties of inline-blocks). You cannot display flex items inline; otherwise you don't actually have a flex layout.\
+It is not clear what exactly you mean by "vertically align" or why exactly you want to display the contents inline, but I suspect that flexbox is not the right tool for whatever you are trying to accomplish. Chances are what you're looking for is just plain old inline layout (display: inline and/or display: inline-block), for which flexbox is not a replacement; flexbox is not the universal layout solution that everyone claims it is (I'm stating this because the misconception is probably why you're considering flexbox in the first place). \
+\
+[Q&A stackoverflow](https://stackoverflow.com/questions/27418104/whats-the-difference-between-displayinline-flex-and-displayflex)
+
+> When we add display: flex, we are really defining display: **block** flex. <br>
+https://www.smashingmagazine.com/2018/08/flexbox-display-flex-container/
+MERCI !!!!
+
+https://discuss.codecademy.com/t/whats-the-difference-between-display-flex-and-display-inline-flex/370020
+
+https://css-tricks.com/multiple-class-id-selectors/

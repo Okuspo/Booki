@@ -40,7 +40,7 @@ Certains éléments HTML ne sont probablement pas censés être mis en forme car
 - Github CLI installé (https://cli.github.com/manual/index)
 
 
-# <a href="j2">Jour 2</a>
+# <a name="j2">Jour 2</a>
 
 ### HTML
 
@@ -242,7 +242,7 @@ Solutions possible : mettre une bordure invisible/blanche sur les ``a:link, a:vi
 - Visuellement on dirait que le div "Les plus populaires" est un enfant de "Hébergements à Marseille" (background rouge), or ils sont enfants du même parent. Revoir la hiérarchie, et retravailler les flexbox.
 
 
-# <a href="j3"> Jour 3</a>
+# <a name="j3"> Jour 3</a>
 
 Flexbox :
 
@@ -272,7 +272,7 @@ https://css-tricks.com/multiple-class-id-selectors/
 
 
 
-# <a href="j4">Jour 4</a>
+# <a name="j4">Jour 4</a>
 
 ## CSS cool stuff
 
@@ -496,6 +496,8 @@ Mettre les ``<a>`` dans les ``article`` ne résoud pas le problème car l'``<art
 - PAGE : Revoir toutes les margin-bottom et les regrouper
 - PAGE : vérifier les règles en doublons avec l'ajout de normalize.css (box-sizing,...)
 - PAGE : vérifier si ma méthode d'import de FontAwesome est bonne (CDN ?)
+- PAGE : créer et ajouter une favicon
+
 - NAV : ajouter des liens vers les sections au menu
 - SECTION SEARCH FORM : mettre en forme la barre de recherche et les filtres, passer l'icone "i" en `::before` du `<p>`
 - SECTION SEARCH FORM : Trouver une meilleure solution que du padding à la mano pour l'icone FA child.
@@ -512,3 +514,5 @@ Mettre les ``<a>`` dans les ``article`` ne résoud pas le problème car l'``<art
 probablement lié au fait que j'ai sorti le footer du wrapper pour qu'il fasse 100% du body width.
 - SECTION ACTIVITIES RESULT : Le wrap des 2 cartes d'un coup parce qu'elles sont dans la même colonne est très moche.
 - FOOTER : Espace entre les titres et les ``<ul>``
+- REPO GIT : Mettre à jour le Readme
+

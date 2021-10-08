@@ -278,7 +278,7 @@ https://css-tricks.com/multiple-class-id-selectors/
 
 "Text is always king"
 
-`::before` and `::before` pseudo elements<br>
+`::before` and `::after` pseudo elements<br>
 https://www.youtube.com/watch?v=zGiirUiWslI<br>
 https://www.youtube.com/watch?v=xoRbkm8XgfQ<br>
 https://www.youtube.com/watch?v=QFjqxVMwIl8<br>
@@ -421,17 +421,17 @@ Aucune explication sur cette page du sélecteur d'imbrication `&` ni de la règl
 
 Nesting allows the grouping of related style rules, like this:
 
-        table.colortable {
-    & td {
-        text-align:center;
-        &.c { text-transform:uppercase }
-        &:first-child, &:first-child + td { border:1px solid black }
-    }
-    & th {
-        text-align:center;
-        background:black;
-        color:white;
-    }
+    table.colortable {
+        & td {
+            text-align:center;
+            &.c { text-transform:uppercase }
+            &:first-child, &:first-child + td { border:1px solid black }
+        }
+        & th {
+            text-align:center;
+            background:black;
+            color:white;
+        }
     }
 
 https://stackoverflow.com/questions/4564916/nesting-css-classes
@@ -440,7 +440,7 @@ https://stackoverflow.com/questions/4564916/nesting-css-classes
 
 Problème rencontré avec la section Activités à Marseille
 
-- J'ai essayé de mettre les 6 cartes dans 1 seul container flex avec comme propriétés :
+J'ai essayé de mettre les 6 cartes dans 1 seul container flex avec comme propriétés :
 
     flex-flow: column-wrap;
     justify-content: space-between;
@@ -515,4 +515,3 @@ probablement lié au fait que j'ai sorti le footer du wrapper pour qu'il fasse 1
 - SECTION ACTIVITIES RESULT : Le wrap des 2 cartes d'un coup parce qu'elles sont dans la même colonne est très moche.
 - FOOTER : Espace entre les titres et les ``<ul>``
 - REPO GIT : Mettre à jour le Readme
-

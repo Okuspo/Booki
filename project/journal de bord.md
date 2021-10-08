@@ -1,6 +1,14 @@
 # OpenClassrooms | Développeur Front-End | Projet : Booki
 
-# Jour 1
+# Index
+
+- [Jour 1](#j1)
+- [Jour 2](#j2)
+- [Jour 3](#j3)
+- [Jour 4](#j4)
+
+
+ # <a name="j1"> Jour 1</a>
 
 ### HTML
 - ` <meta charset="UTF-8">` -> ?
@@ -32,7 +40,7 @@ Certains éléments HTML ne sont probablement pas censés être mis en forme car
 - Github CLI installé (https://cli.github.com/manual/index)
 
 
-# Jour 2
+# <a href="j2">Jour 2</a>
 
 ### HTML
 
@@ -233,7 +241,8 @@ Solutions possible : mettre une bordure invisible/blanche sur les ``a:link, a:vi
 
 - Visuellement on dirait que le div "Les plus populaires" est un enfant de "Hébergements à Marseille" (background rouge), or ils sont enfants du même parent. Revoir la hiérarchie, et retravailler les flexbox.
 
-# Jour 3
+
+# <a href="j3"> Jour 3</a>
 
 Flexbox :
 
@@ -260,3 +269,246 @@ MERCI !!!!
 https://discuss.codecademy.com/t/whats-the-difference-between-display-flex-and-display-inline-flex/370020
 
 https://css-tricks.com/multiple-class-id-selectors/
+
+
+
+# <a href="j4">Jour 4</a>
+
+## CSS cool stuff
+
+"Text is always king"
+
+`::before` and `::before` pseudo elements<br>
+https://www.youtube.com/watch?v=zGiirUiWslI<br>
+https://www.youtube.com/watch?v=xoRbkm8XgfQ<br>
+https://www.youtube.com/watch?v=QFjqxVMwIl8<br>
+
+
+New properties and attributes discovered :
+- `position-absolute`
+- `counter-increment`
+- `isolation: isolate`
+- `overflow: hidden`
+- `inset` : https://developer.mozilla.org/fr/docs/Web/CSS/inset (expérimental)
+- `z-index`
+- `opacity`
+- `mix-blend-mode` -> Comme dans Photoshop
+- `mix-blend-mode: multiply`
+- `mix-blend-mode: screen`
+- `gradient`, linear, radial,conic, repeating..., https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient()
+
+[How to create a duotone effect and mix blend modes](https://egghead.io/lessons/css-use-css-pseudo-elements-and-mix-blend-mode-to-create-a-duotone-style-effect)
+
+
+> Box shadow: <br>
+> https://www.youtube.com/watch?v=u6Rur7G8HNY <br>
+https://tobiasahlin.com/blog/how-to-animate-box-shadow/ <br>
+https://codepen.io/kevinpowell/pres/abmOeoG <br>
+> A mettre dans ma page !!!
+> En bref : on crée un calque avec l'ombre déjà présente, et on la toggle avec ``transition: opacity 1s ease;``<br>
+> Cas 1 : on crée une box-shadow
+> Différence : l'ombre est déjà calculée, on change juste son opacité<br>
+> Différence dans l'exemple : 32ms rendering + 18ms painting contre 20ms rendering + 2ms painting<br>
+
+
+Emmet : go to matching pair (pratique pour mon wrapper)
+
+___
+> **Padding as a void** In the initial CSS implementation by Netscape Navigator 4, padding was sometimes a void.  What I mean is, you could give an element a background color, and you could set a border, but if you adding any padding, in some situations it wouldn’t take on the background color, allowing the background of the parent element to show through.  Today, we can recreate that effect like so: 
+
+    border: 3px solid red;
+    padding: 0.5em;
+    background-color: cornflowerblue;
+    background-clip: content-box;
+https://meyerweb.com/
+___
+
+## Markdown
+
+Trouver un système de catégories en markdown/html pour récupérer tous les éléments correspondant et les exporter vers un autre markdown (ex : "CSS_stuff.md", "Emmet_shorhands.md")<br>
+Possibilité d'utiliser une classe HTML dans le markdown mais besoin d'un script pour extraire les paragraphes correspondants et les écrire dans les autres markdowns.<br>
+-> a voir quand j'aurai appris javascript/node.js
+
+___
+
+## CSS 
+
+Explication et exemples d'imbrication de propriétés CSS (nesting)<br>
+https://www.pierre-giraud.com/html-css-apprendre-coder-cours/imbrication-heritage-etendu/ <br>
+
+
+### Parenthèse "UI/UX après visite du site de Pierre Giraud" 
+ La croix pour fermer la pop-up qui s'affiche sur sa page est située **en bas à gauche** de la pop-up.<br>
+D'ordinaire elle soit situé en haut à droite dans les fenêtres Windows, en haut à gauche sur Linux et Mac. <br>
+
+**Question naïve :** est-ce qu'il y a des études menées en ergonomie sur les mouvement du bras lorsqu'on déplace la souris ?
+<br> Observation perso : faire un mouvement d'adduction de l'épaule a l'air de demander moins d'effort que de faire un mouvement d'adbduction, et le mouvement me semble plus précis. <br>
+(Le problème se pose moins dans le cas d'une fenêtre en plein écran car la souris arrive en butée en haut à droite de l'écran.)
+
+Pourquoi les boutons de contrôle d'une fenêtre sont situés en haut et pas en bas, alors qu'ergonomiquement ça semble plus confortable d'y accéder quand ils sont en bas.
+
+-> Peut être parce qu'en bas il y a le menu démarrer ou le dock et que ça évite de cliquer accidentellement dessus.<br> 
+-> Ou peut être pour dissuader de fermer la page/ pop-up. :'D <br>
+-> Ou c'est une question de sens de lecture, et qu'on considère que les contrôles (Ficher, Edition,... [x] Fermer la page) précèdent le contenu.
+
+Liens connexes: https://ux.stackexchange.com/questions/23733/what-is-better-window-buttons-on-the-left-os-x-or-on-the-right-windows
+
+> **I think this is one of those things where you should do what the user expects.** <br>
+> What do they expect? Well that's sometimes the tricky thing to figure out. Eye movement studies have been done in excess to determine the best placement for the most important call-to-action buttons. And users often start in the upper-left hand corner. On the other hand, these window buttons are so ubiquitous and so familiar that they shouldn't require unnecessary thought. If a user is accustomed to an OS with the buttons on a certain side of the screen they will naturally be looking for them in that spot. Past experience is going to be the dominant factor in what the user expects.<br>
+So for example, if your audience is composed of 90% Windows users, I think you should absolutely put these buttons in the upper-right. Windows users will naturally look in the upper-right hand corner for these buttons because that's what they've been trained to do.<br>
+Or better yet, if you can adopt the built-in window controls (title and button placement) of the target OS, then it takes this decision out of your hands and the buttons will always be where the user expects.<br> 
+https://ux.stackexchange.com/questions/7/what-is-the-important-aspect-to-consider-when-deciding-where-windows-interaction
+
+-> Problème de ce raisonnement, si on dispose les éléments par rapport à ce que les utilisateurs ont l'habitude de voir, on ne peut rien faire évoluer. <br>
+Point intéressant du post : on place les éléments par rapport au regard/sens de lecture (début : haut/gauche) / lecture en Z,...
+donc "ergonomie" pas au sens anatomique (mouvement d'épaule, du bras, de la main).
+<br> Pistes à explorer : 
+- Les mouvements de curseur des joueurs de FPS. (ex: Razer et son app de heatmaps et de tracking de curseur) 
+- Des études d'ergonomie sur le placement des éléments fréquemments utilisés, dans une page web ou une app.
+
+___
+
+## CSS 
+NESTING 
+https://www.alsacreations.com/tuto/lire/545-Comprendre-l-heritage-et-la-parente-des-styles-CSS.html
+
+Il y a un héritage "natif" concernant les balises ``<a>`` et ses enfant (pseudo classes ``:link`` ``:visited``, ``:hover``, ``:active``)
+
+    .menu li {
+        propriétés
+    }
+éléments li dont le parent à la classe "menu"
+
+    li .menu {
+        propriétés
+    }
+éléments de la classe menu dont le parent est un ``<li>``
+
+    li, .menu {
+        propriétés
+    }
+pas d'héritage ici (avec la virgule), c'est juste pour grouper les propriétés d'éléments sans rapport, comme dans mon CSS :
+
+    html, body {
+        width: 100%;
+    }
+<br>
+    
+    li.menu {
+        propriétés
+    }
+
+Elément `<li>` qui possède la classe ``menu``
+
+Aucune explication sur cette page du sélecteur d'imbrication `&` ni de la règle `@nest`.
+
+[CSS Nesting Module - W3C First Public Working Draft, 31 August 2021](https://www.w3.org/TR/css-nesting-1)
+
+    table.colortable td {
+    text-align:center;
+    }
+    table.colortable td.c {
+    text-transform:uppercase;
+    }
+    table.colortable td:first-child, table.colortable td:first-child+td {
+    border:1px solid black;
+    }
+    table.colortable th {
+    text-align:center;
+    background:black;
+    color:white;
+    }
+
+Nesting allows the grouping of related style rules, like this:
+
+        table.colortable {
+    & td {
+        text-align:center;
+        &.c { text-transform:uppercase }
+        &:first-child, &:first-child + td { border:1px solid black }
+    }
+    & th {
+        text-align:center;
+        background:black;
+        color:white;
+    }
+    }
+
+https://stackoverflow.com/questions/4564916/nesting-css-classes
+
+**Le nesting n'est pas encore possible en vanilla CSS. Seulement avec Sass et Less (chercher ce que c'est).**
+
+Problème rencontré avec la section Activités à Marseille
+
+- J'ai essayé de mettre les 6 cartes dans 1 seul container flex avec comme propriétés :
+
+    flex-flow: column-wrap;
+    justify-content: space-between;
+
+Les 2 grandes cartes font 100% de la ``height:990px`` du container, et les plus petites cartes s'empilent bien.
+
+Problème : l'inversion du main et du cross axis fait que si on réduit la largeur de la page, les cartes débordent.
+
+
+Test 2 : j'ai rajouté 2 divs, chacun englobe 2 petites cartes.
+Le container flex est maintenant en :
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+les divs "colonne" en :
+
+    flex-direction: column;
+    justify-content: space-between;
+
+Nouveau problème : les tags ``<a>`` autour des ``<article>`` ne sont pas des éléments flex. <br>
+J'aimerais éviter de mettre une propriété flex à des ``<a>`` car ça ne fait pas de sens. <br>
+Mettre les ``<a>`` dans les ``article`` ne résoud pas le problème car l'``<article>`` est aussi un container flex.
+
+     <section id="activities_results">
+           
+        <h1>Activités à Marseille</h1>
+
+        <div class="ar_gallery">
+        
+        ...
+        
+        <div class="ar_column">
+           <a href="#">                 
+                <article class="ar_card small_3">
+                    <h2>Notre-Dame-de-la-Garde</h2>
+                    <img src="assets/activites/4_small/notre_dame_de_la_garde.jpg"></img>     
+                </article>
+            </a>
+        
+            <a href="#">
+                <article class="ar_card small_4">
+                    <h2>Parc Longchamp</h2>
+                    <img src="assets/activites/4_small/parc_longchamp.jpg"></img>
+                </article>
+            </a>
+        </div>
+
+
+
+**To do**
+
+- PAGE : Revoir toutes les margin-bottom et les regrouper
+- PAGE : vérifier les règles en doublons avec l'ajout de normalize.css (box-sizing,...)
+- PAGE : vérifier si ma méthode d'import de FontAwesome est bonne (CDN ?)
+- NAV : ajouter des liens vers les sections au menu
+- SECTION SEARCH FORM : mettre en forme la barre de recherche et les filtres, passer l'icone "i" en `::before` du `<p>`
+- SECTION SEARCH FORM : Trouver une meilleure solution que du padding à la mano pour l'icone FA child.
+- SECTION CITY RESULTS : Ajouter une ancre au h1
+- SECTION CITY RESULTS : ajouter des ombres aux cartes
+- SECTION CITY RESULTS : revoir les design des cartes proprement et passer en revue les propriétés CSS
+- SECTION CITY RESULTS : Afficher plus : lien à rajouter et font-weight à changer
+- ASIDE MOST POPULAR RESULTS : bien placer l'icone par rapport au titre (la passer en `::after` ?)
+- ASIDE MOST POPULAR RESULTS : revoir l'alignement des détails de la carte
+- ASIDE MOST POPULAR RESULTS : ajouter des ombres aux cartes
+- SECTION ACTIVITIES RESULT : ajouter les liens aux cartes
+- SECTION ACTIVITIES RESULT : ajouter une ancre au h1
+- SECTION ACTIVITIES RESULT : le wrap fait passer les cartes sous le footer !! <br>
+probablement lié au fait que j'ai sorti le footer du wrapper pour qu'il fasse 100% du body width.
+- SECTION ACTIVITIES RESULT : Le wrap des 2 cartes d'un coup parce qu'elles sont dans la même colonne est très moche.
+- FOOTER : Espace entre les titres et les ``<ul>``

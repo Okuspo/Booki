@@ -82,7 +82,7 @@ nav img {
 }
 
 #navlinks a:link, #navlinks a:visited {
-    
+    /* color: black; */
     border: 2px solid transparent;
     padding: 10px 10px;
     display: block;
@@ -228,6 +228,8 @@ span.info::before {
     box-shadow: var(--box-shadow);
     margin: min(5px, 5%);
     font-size: var(--fs--small);
+    transform: translateY(0px) scale(1);
+    transition: transform .25s ease;
 }
 
 /* Card shadow effect */

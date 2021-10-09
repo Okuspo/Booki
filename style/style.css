@@ -76,7 +76,8 @@ nav img {
 }
 
 #navlinks a:link, #navlinks a:visited {
-  
+    
+    border: 2px solid transparent;
     color: var(--clr-blue);
     padding: 10px 10px;
     display: block;
@@ -86,6 +87,7 @@ nav img {
 #navlinks a:hover, #navlinks a:active {
 
     border-top: 2px solid var(--clr-blue);
+
 }
 
 /* SEARCH SECTION */
@@ -123,6 +125,7 @@ nav img {
     padding: 15px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    cursor: pointer;
 }
 
 #search_filters {
@@ -132,7 +135,13 @@ nav img {
     margin-bottom: 16px;
 }
 
-#fa_eco,
+#fa_eco {
+    color:var(--clr-blue);
+    background-color: var(--clr-light-blue);
+    padding: 15px 13px;
+    border-radius: 50%;
+}
+
 #fa_fam,
 #fa_rom,
 #fa_ani {
@@ -146,12 +155,13 @@ nav img {
     padding: 15px 17px;
 }
 .filter {
-    background-color: var(--clr-light-grey);
+    background-color: white;
     align-content: center;
     margin: 16px;
     padding: 0 16px 0 0;
     font-weight: var(--fw-bold);
-    border-radius: 100px;
+    border: 2px solid var(--clr-light-grey);
+    border-radius: 50px;
 }
 
 span.info::before {

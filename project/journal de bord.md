@@ -2,11 +2,73 @@
 
 # Index
 
+- [Spécifications fonctionnelles](#fonc_spec)
+- [Spécifications techniques](#tech_spec)
 - [Jour 1](#j1)
 - [Jour 2](#j2)
 - [Jour 3](#j3)
 - [Jour 4](#j4)
+- [Jour 5](#j5)
 
+___
+
+# <a name="fonc_spec"> Spécifications fonctionnelles</a>
+- Les usagers pourront rechercher des hébergements dans la ville de
+leur choix. Le champ de recherche est un champ de saisie, le texte
+doit donc pouvoir être édité par l’utilisateur. Il faut englober ce
+champ dans un formulaire pour que ce dernier soit valide auprès du
+W3C. La partie recherche ne doit pas être fonctionnelle. **OK**
+- Chaque carte d’hébergement ou d’activité devra être cliquable dans
+son intégralité (pas uniquement le titre). Pour l’instant, les liens sont
+vides. On peut utiliser un attribut `href=”#”` pour simuler la
+présence d’un lien.
+- Les filtres doivent changer d’apparence au survol. Je te laisse décider
+de l’effet approprié, je n’ai pas encore eu le temps de me pencher
+dessus. Par contre, ils ne doivent pas être fonctionnels. **TO DO**
+- Les textes “Hébergements” et “Activités”, situés dans l’en-tête, sont
+des liens. Ils doivent mener respectivement vers la section
+“Hébergements à Marseille” et “Activités à Marseille”. **TO DO**
+
+# <a name="tech_spec"> Spécifications techniques</a>
+
+- Deux maquettes ont été réalisées : l’une desktop et l’autre mobile. Le
+site devra être également adapté aux formats tablette. Pour les
+tablettes, nous sommes libres de faire les adaptations nécessaires. Il
+est important qu’aucun élément ne soit coupé, et que le texte ait
+une taille suffisante.
+- Concernant les breakpoints, nous avons convenu avec le client
+d’utiliser 992 px et 768 px.
+992 px pour les écrans d’ordinateurs et 768 px pour les tablettes, et
+tout ce qui est en dessous de 768 pour les téléphones portables.
+- Il faut d’abord réaliser l’intégration pour les ordinateurs (autrement
+dit, en desktop first), puis les tablettes et enfin les téléphones.
+L’utilisation des Media Queries nous permettra de réaliser
+l’intégration pour les différents supports.
+- Plusieurs formats et tailles d’images ont été exportés. Il faudra choisir
+le format le plus adapté par rapport à la résolution et au temps de
+chargement. **OK mais justifier dans la présentation**
+- Les icônes proviennent de la bibliothèque Font Awesome. Nous
+pouvons passer par un CDN pour faciliter le chargement des icônes.
+- Les couleurs de la charte sont le bleu (#0065FC), une version plus
+claire de ce bleu (#DEEBFF) et le gris pour le fond (#F2F2F2). **OK**
+- La police du site est Raleway. Nous pouvons passer par Google Font
+pour importer facilement cette police dans le code :
+https://fonts.google.com/specimen/Raleway. **OK**
+- Il est important d’utiliser les pixels et les pourcentages plutôt que les
+REM et les EM. Le client préfère cette solution pour des contraintes
+techniques. **OK**
+- Il est important d’utiliser Flexbox plutôt que Grid. Notre client est
+plus à l’aise avec cette solution. **OK**
+- Aucun framework CSS (type BootStrap ou Tailwind CSS) ou
+préprocesseur CSS (type Sass ou Less) ne doit être utilisé. **OK**
+- Il est important d’utiliser des balises sémantiques (type `main`,
+`header`, `nav`, etc.). **OK**
+- Le code doit être valide aux validateurs W3C HTML et CSS. **TO DO**
+- La maquette doit être compatible avec les dernières versions de
+Google Chrome et de Mozilla Firefox. Il faudra tester le prototype sur
+ces deux navigateurs. **TO DO**
+- Le code ne doit pas être versionné avec Git.
+___
 
  # <a name="j1"> Jour 1</a>
 
@@ -490,18 +552,18 @@ Mettre les ``<a>`` dans les ``article`` ne résoud pas le problème car l'``<art
         </div>
 
 
-
+___
 **To do**
 
 - PAGE : Revoir toutes les margin-bottom et les regrouper
 - PAGE : vérifier les règles en doublons avec l'ajout de normalize.css (box-sizing,...)
 - PAGE : vérifier si ma méthode d'import de FontAwesome est bonne (CDN ?)
-- PAGE : créer et ajouter une favicon
+- **OK** PAGE : créer et ajouter une favicon 
 
-- NAV : ajouter des liens vers les sections au menu
+-  **OK** NAV : ajouter des liens vers les sections au menu
 - SECTION SEARCH FORM : mettre en forme la barre de recherche et les filtres, passer l'icone "i" en `::before` du `<p>`
 - SECTION SEARCH FORM : Trouver une meilleure solution que du padding à la mano pour l'icone FA child.
-- SECTION CITY RESULTS : Ajouter une ancre au h1
+-  **OK** SECTION CITY RESULTS : Ajouter une ancre aux sections
 - SECTION CITY RESULTS : ajouter des ombres aux cartes
 - SECTION CITY RESULTS : revoir les design des cartes proprement et passer en revue les propriétés CSS
 - SECTION CITY RESULTS : Afficher plus : lien à rajouter et font-weight à changer
@@ -515,3 +577,201 @@ probablement lié au fait que j'ai sorti le footer du wrapper pour qu'il fasse 1
 - SECTION ACTIVITIES RESULT : Le wrap des 2 cartes d'un coup parce qu'elles sont dans la même colonne est très moche.
 - FOOTER : Espace entre les titres et les ``<ul>``
 - REPO GIT : Mettre à jour le Readme
+___
+
+# <a name="j5"> Jour 5 </a>
+
+**Favicon** <br>
+Choix concernant l'extension et les dimensions de la favicon : <br>
+https://developer.mozilla.org/fr/docs/Glossary/Favicon <br>
+https://stackoverflow.com/questions/4014823/does-a-favicon-have-to-be-32%C3%9732-or-16%C3%9716
+
+Ca fonctionne en 32px.
+Peut être ajouter une version 72px pour les écrans retina. (accessoire)
+
+DupChecker :
+
+    ------------------ Results ------------------
+    ⚙️[trimStart] [trimEnd] [trimChars: ^\.[\w\-\s\.>:,\[\]\*\=]+{]
+    ✅28 duplicate values found in 351 lines:
+    }
+    font-size: 14px; CORRIGE
+    display: flex; IGNORE
+    align-items: center; IGNORE
+    text-decoration: none; CORRIGE
+    flex-direction: column; IGNORE
+    padding: 10px 10px; IGNORE
+    font-weight: var(--fw-bold); IGNORE
+    border: none; IGNORE
+    margin-bottom: var(--mgn-bottom); IGNORE
+    background-color: var(--clr-light-grey); IGNORE
+    color: var(--clr-blue); IGNORE
+    border-radius: 100%; CORRIGE -> 50% au lieu de 100% après test de l'exemple stackoverflow
+    justify-content: space-between; IGNORE
+    width: 100%; IGNORE
+    border-radius: 15px; IGNORE
+    color:var(--clr-blue); IGNORE
+    padding: 16px; IGNORE
+    align-self: flex-start; IGNORE
+    background-color: white;
+    font-size: var(--fs--small);
+    box-shadow: var(--box-shadow);
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    flex-flow: row wrap;
+    height: 495px;
+    height: 100%;
+    border-top-right-radius: 15px;
+
+https://stackoverflow.com/questions/55410657/what-is-the-difference-between-border-radius-50-and-100
+
+J'ai réussi à implémenter un effet sur les cartes, en suivant l'exemple de
+https://tobiasahlin.com/blog/how-to-animate-box-shadow/
+
+En revanche, j'ai été confronté à un problème spécifique à ma page, car mes cartes ont une bordure de 5px arrondie, et l'ombre du calque invisible (`.pseudo-hover::after`) est au dessus de la bordure.
+
+J'ai tenté de résoudre le problème en ajoutant la même bordure au `.pseudo-hover::after` mais ça n'a pas marché.
+
+J'ai inversé la marge (`margin: -5px;`) et ça fonctionne.
+
+> Si la propriété est différente de none, un contexte d'empilement sera créé. Dans ce cas, l'élément agira comme le bloc englobant pour les éléments qu'il contient et qui ont position: fixed; ou position: absolute;.
+
+https://developer.mozilla.org/fr/docs/Web/CSS/transform
+https://www.w3.org/TR/CSS2/visudet.html#abs-non-replaced-height
+https://stackoverflow.com/questions/11495200/how-do-negative-margins-in-css-work-and-why-is-margin-top-5-margin-bottom5
+https://www.w3.org/TR/CSS2/visudet.html#abs-non-replaced-height
+
+
+Problème posé par cette solution : le pseudo élément `::after` est au dessus du lien.
+
+> Pseudo-elements are treated as descendants of their associated element. To position a pseudo-element below its parent, you have to create a new stacking context to change the default stacking order.
+Positioning the pseudo-element (absolute) and assigning a z-index value other than “auto” creates the new stacking context.
+
+https://developer.mozilla.org/fr/docs/Web/CSS/z-index
+https://stackoverflow.com/questions/3032856/is-it-possible-to-set-the-stacking-order-of-pseudo-elements-below-their-parent-e
+https://stackoverflow.com/questions/2503705/how-to-get-a-child-element-to-show-behind-lower-z-index-than-its-parent
+https://stackoverflow.com/questions/54897916/why-cant-an-element-with-a-z-index-value-cover-its-child
+https://stackoverflow.com/questions/3839178/how-to-use-z-index-within-an-a-tag
+
+
+Solution fonctionnelle : 
+    a {
+    position: relative;
+    z-index: 5;
+    }
+
+Comment savoir combien de niveaux maximum de z-index j'ai dans ma page, pour éviter de mettre `z-index: 2147483647;`
+https://stackoverflow.com/questions/491052/minimum-and-maximum-value-of-z-index
+
+https://www.digitalocean.com/community/tutorials/css-z-index
+
+Given two HTML elements, the deeply nested HTML element will always get overlapped by a less-nested HTML element with a lower z-index value.
+
+    <div class="blue">
+        <div class="violet"></div>
+        <div class="purple"></div>
+    </div>
+    <div class="green"></div>
+
+    .blue {
+    position: relative;
+    z-index: 2;
+    background-color: blue;
+    }
+    .violet {
+    position: relative;
+    z-index: 4;
+    background-color: violet;
+    }
+    .purple {
+    position: relative;
+    z-index: 1;
+    background-color: purple;
+    }
+    .green {
+    position: relative;
+    z-index: 3;
+    background-color: green;
+    top: -4em;
+    }
+
+
+The HTML element div.violet will get overlapped by div.green despite having a higher z-index value!
+
+> In CSS code bases, you’ll often see z-index values of 999, 9999 or 99999. This is a perhaps lazy way to ensure that the element is always on top. It can lead to problems down the road when multiple elements need to be on top. Most of the time you’ll find that a z-index of 1 or 2 will suffice for your needs. 
+
+Sauf qu'il s'agit d'un cas particulier car
+
+    <a href="#">
+        <article class="card pseudo-hover">
+            Contenu de la carte
+        </article>
+    </a>
+
+avec
+
+    .pseudo-hover {
+        
+        position: relative;
+        
+    }
+
+    .pseudo-hover::after {
+        
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        border-radius: 15px;
+        margin: -5px;
+        box-shadow: var(--box-shadow-hover);
+        
+    }
+
+    .pseudo-hover:hover::after {
+        opacity: 1;
+        transition: opacity .25s ease;
+    } 
+
+Le pseudo élément ``::after`` crée un nouveau contexte d'empilement par avec son parent . <br>
+> Within a stacking context, child elements are stacked according to the same rules previously explained. Importantly, the z-index values of its child stacking contexts only have meaning in this parent. Stacking contexts are treated atomically as a single unit in the parent stacking context.
+
+
+https://www.oreilly.com/library/view/developing-web-components/9781491905685/ch04.html
+
+or `<a>` n'est pas son parent.
+
+Solution : 
+
+    a {
+        position: relative;
+        z-index: 3; (soit > à tous les autres éléments du stacking context "général")
+    }
+
+De cette manière, `<a>` repasse au dessus de `<article>` et de son pseudo élément `::after`
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+
+In summary:
+
+>Stacking contexts can be contained in other stacking contexts, and together create a hierarchy of stacking contexts. <br>
+Each stacking context is completely independent of its siblings: only descendant elements are considered when stacking is processed.<br>
+Each stacking context is self-contained: after the element's contents are stacked, the whole element is considered in the stacking order of the parent stacking context.<br>
+
+
+Card margins
+
+https://stackoverflow.com/questions/38078957/can-we-define-min-margin-and-max-margin-max-padding-and-min-padding-in-css
+
+___
+**To do**
+
+- PAGE : vérifier si ma méthode d'import de FontAwesome est bonne (CDN ?)
+- SECTION SEARCH FORM : mettre en forme la barre de recherche et les filtres, passer l'icone "i" en `::before` du `<p>` 
+- SECTION SEARCH FORM : Trouver une meilleure solution que du padding à la mano pour l'icone FA child.
+- SECTION ACTIVITIES RESULT : Le wrap des 2 cartes d'un coup parce qu'elles sont dans la même colonne est très moche. -> sera réglé par les media queries
+- REPO GIT : Mettre à jour le Readme
+___

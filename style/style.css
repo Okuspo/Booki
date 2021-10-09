@@ -9,9 +9,6 @@
     /* Titles font weight */
     --fw-bold: 700;
     
-    /* Default bottom margin */
-    --mgn-bottom: 22px;
-
     /*Card font size*/
     --fs--small: 12px;
 
@@ -20,14 +17,11 @@
     --box-shadow-hover: 2px 2px 3px 3px rgba(0, 0, 0, 0.4);
 }
 
-
-
 /* GENERAL SETTINGS */
 * {
     margin:0;
     padding:0;
     font-family: 'Raleway', sans-serif;
-    font-size: 14px;
     box-sizing: border-box;
 }
 
@@ -59,10 +53,9 @@ body {
     width: 93%;
 }
 
-section {
+#search_section, #results_section, #activities_results {
     margin-bottom: 65px;
 }
-
 
 /* HEADER SECTION */
 nav {
@@ -91,6 +84,7 @@ nav img {
 }
 
 #navlinks a:hover, #navlinks a:active {
+
     border-top: 2px solid var(--clr-blue);
 }
 
@@ -102,32 +96,31 @@ nav img {
 }
 
 #search_input_container {
-    display:flex;
+    display: flex;
     align-items: center;
-    margin-bottom: var(--mgn-bottom);
+    margin-bottom: 16px;
 }
 
-#fa_marker {
-    color:black;
-    background-color: var(--clr-light-grey)        ;
-    padding: 16px 16px;
+.fa-map-marker-alt {
+    padding: 16px;
+    background-color: var(--clr-light-grey);    
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-#search_input input {
+#search_input_container input {
     border: none;
     border-top: 1px solid var(--clr-light-grey);
     border-bottom: 1px solid var(--clr-light-grey);
-    padding: 14px 0;
+    padding: 14px 10px;
     font-weight: var(--fw-bold);
 }
 
-#search_input button {
+#search_input_container button {
     background-color: var(--clr-blue);
     color: white;
     border: none;
-    padding: 14px;
+    padding: 15px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -136,9 +129,8 @@ nav img {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    margin-bottom: var(--mgn-bottom);
+    margin-bottom: 16px;
 }
-
 
 #fa_eco,
 #fa_fam,
@@ -162,13 +154,21 @@ nav img {
     border-radius: 100px;
 }
 
-.fa-info {
-    padding: 10px 15px;
-    background-color: var(--clr-light-grey);
-    color: var(--clr-blue);
+span.info::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f129";
+    padding : 4px 10px;
+    border : 1px solid var(--clr-light-grey);
     border-radius: 50%;
-
+    color: var(--clr-blue);
 }
+
 /* RESULTS SECTION */
 
 #results_section {
@@ -187,7 +187,6 @@ nav img {
     padding: 16px;
     border-radius: 15px;
     background-color: var(--clr-light-grey);
-   
 
 }
 
@@ -202,6 +201,7 @@ nav img {
     background-color: white;
     box-shadow: var(--box-shadow);
     margin: min(5px, 5%);
+    font-size: var(--fs--small);
 }
 
 /* Card shadow effect */
@@ -242,7 +242,6 @@ nav img {
     flex-basis: 30%;
     border: 5px solid white;
     border-radius: 15px;
-    font-size: var(--fs--small);
 }
 
 .cr_card img {
@@ -269,10 +268,11 @@ nav img {
 #show_more {
     margin-top: 15px;
     margin-bottom: 15px;
+    margin-left: 30px;
     width: 100%;
     align-self: flex-end;
     font-weight: var(--fw-bold);
-    /* width: 100%; */
+    
 }
 
 .fa-star {
@@ -347,7 +347,6 @@ nav img {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    /* height: 495px; */
 }
 
 .ar_card {
@@ -368,7 +367,7 @@ nav img {
 
 .ar_card h2 {
     
-    padding: 28px 0 28px 10px;
+    padding: 16px 0 16px 16px;
 }
 .big {
     height: 495px;
@@ -406,7 +405,7 @@ footer {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    background-color: #cfd3d4;
+    background-color: var(--clr-light-grey);
 }
 
 

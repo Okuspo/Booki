@@ -770,8 +770,8 @@ ___
 **To do**
 
 - PAGE : vérifier si ma méthode d'import de FontAwesome est bonne (CDN ?)
-- SECTION SEARCH FORM : mettre en forme la barre de recherche et les filtres, passer l'icone "i" en `::before` du `<p>` 
-- SECTION SEARCH FORM : Trouver une meilleure solution que du padding à la mano pour l'icone FA child.
 - SECTION ACTIVITIES RESULT : Le wrap des 2 cartes d'un coup parce qu'elles sont dans la même colonne est très moche. -> sera réglé par les media queries
 - REPO GIT : Mettre à jour le Readme
+- Les ombres au hover sont plus marquées dans la partie Hébergements à Marseille que dans les autres blocs
+
 ___

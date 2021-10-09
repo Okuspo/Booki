@@ -84,14 +84,13 @@ nav img {
 #navlinks a:link, #navlinks a:visited {
     
     border: 2px solid transparent;
-    color: var(--clr-blue);
     padding: 10px 10px;
     display: block;
     
 }
 
 #navlinks a:hover, #navlinks a:active {
-
+    color: var(--clr-blue);
     border-top: 2px solid var(--clr-blue);
 
 }

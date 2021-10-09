@@ -203,7 +203,7 @@ span.info::before {
     flex-basis: 75%;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 16px;
+    padding: 15px;
     border-radius: 15px;
     background-color: var(--clr-light-grey);
 
@@ -212,6 +212,7 @@ span.info::before {
 #cr_title {
     margin-left: 3%;
     width: 100%;
+    padding-top: 20px;
     align-self: flex-start;
 }
 
@@ -321,7 +322,7 @@ span.info::before {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 15px;
+    padding: 0 15px 15px 15px;
     border-radius: 15px;
     background-color: var(--clr-light-grey);
 }
@@ -329,10 +330,8 @@ span.info::before {
 .mpr_title {
     display: flex;
     justify-content: space-between;
-}
-
-.mpr_title h3 {
-    margin: 0;
+    width: 100%;
+    padding-top: 5px;
 }
 
 .fa-chart-line {
@@ -396,7 +395,7 @@ span.info::before {
     justify-content: space-between;
 }
 
-.ar_card h4 {
+.ar_card h3 {
     
     padding: 16px 0 16px 16px;
 }

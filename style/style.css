@@ -10,7 +10,7 @@
     --fw-bold: 700;
     
     /*Card font size*/
-    --fs--small: 0.8em;
+    --fs--small: 1em;
 
     /* Box shadow */
     --box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
@@ -22,6 +22,7 @@
     margin:0;
     padding:0;
     font-family: 'Raleway', sans-serif;
+    font-size: 16px;
     box-sizing: border-box;
 }
 
@@ -36,6 +37,11 @@ a {
 
 h1, h2, h3 {
     font-weight: var(--fw-bold);
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 1.2em;
 }
 
 html, body {
@@ -205,6 +211,8 @@ span.info::before {
 
 #cr_title {
     margin-left: 3%;
+    width: 100%;
+    align-self: flex-start;
 }
 
 #results_section h2 {
@@ -243,10 +251,13 @@ span.info::before {
     bottom: 0;
     opacity: 0;
     border-radius: 15px;
-    margin: -5px;
     box-shadow: var(--box-shadow-hover);
     transition: opacity .25s ease;
     
+}
+
+.cr_card.pseudo-hover::after {
+    margin: -5px;
 }
 
 .pseudo-hover:hover::after {
@@ -260,10 +271,11 @@ span.info::before {
     flex-basis: 30%;
     border: 5px solid white;
     border-radius: 15px;
+    margin-bottom: 2%;
 }
 
 .cr_card img {
-    height: 200px;
+    height: 190px;
     width: 100%;
     object-fit: cover;
     border-top-left-radius: 15px;
@@ -309,7 +321,7 @@ span.info::before {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 16px;
+    padding: 15px;
     border-radius: 15px;
     background-color: var(--clr-light-grey);
 }
@@ -384,10 +396,11 @@ span.info::before {
     justify-content: space-between;
 }
 
-.ar_card h2 {
+.ar_card h4 {
     
     padding: 16px 0 16px 16px;
 }
+
 .big {
     height: 495px;
 }

@@ -10,7 +10,7 @@
     --fw-bold: 700;
     
     /*Card font size*/
-    --fs--small: 12px;
+    --fs--small: 0.8em;
 
     /* Box shadow */
     --box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
@@ -34,7 +34,7 @@ a {
        
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-weight: var(--fw-bold);
 }
 
@@ -92,6 +92,10 @@ nav img {
 
 /* SEARCH SECTION */
 
+button {
+    cursor: pointer;
+}
+
 #search_form {
     display: flex;
     flex-direction: column;
@@ -125,7 +129,6 @@ nav img {
     padding: 15px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    cursor: pointer;
 }
 
 #search_filters {
@@ -200,7 +203,11 @@ span.info::before {
 
 }
 
-#results_section h1 {
+#cr_title {
+    margin-left: 3%;
+}
+
+#results_section h2 {
     align-self: flex-start;
     width: 100%;
 }
@@ -238,6 +245,7 @@ span.info::before {
     border-radius: 15px;
     margin: -5px;
     box-shadow: var(--box-shadow-hover);
+    transition: opacity .25s ease;
     
 }
 
@@ -278,7 +286,7 @@ span.info::before {
 #show_more {
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-left: 30px;
+    margin-left: 3%;
     width: 100%;
     align-self: flex-end;
     font-weight: var(--fw-bold);
@@ -311,7 +319,7 @@ span.info::before {
     justify-content: space-between;
 }
 
-.mpr_title h1 {
+.mpr_title h3 {
     margin: 0;
 }
 
@@ -335,7 +343,8 @@ span.info::before {
     flex-direction: column;
     justify-content: flex-start;
     width: 60%;
-    margin-left: 20px;
+    margin-top: 2%;
+    margin-left: 5%;
     padding-right: 20px;
 
 }
@@ -365,7 +374,7 @@ span.info::before {
     display: flex;
     flex-direction: column-reverse;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 15px;
 
 }
 

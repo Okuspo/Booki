@@ -333,7 +333,6 @@ https://discuss.codecademy.com/t/whats-the-difference-between-display-flex-and-d
 https://css-tricks.com/multiple-class-id-selectors/
 
 
-
 # <a name="j4">Jour 4</a>
 
 ## CSS cool stuff
@@ -775,3 +774,17 @@ ___
 - Les ombres au hover sont plus marquées dans la partie Hébergements à Marseille que dans les autres blocs
 
 ___
+
+https://developer.mozilla.org/fr/docs/Web/HTML/Element/Label
+
+> Il ne faut pas placer d'éléments interactifs (tels que les ancres (``<a>``) ou les boutons (`<button>`) dans un élément label sinon il sera difficile d'activer le contrôle associé à ce libellé.
+
+> Placer des éléments de titres à l'intérieur d'un élément label causera des interférences avec de nombreux outils d'assistance car les titres sont généralement utilisés comme une aide à la navigation
+
+> Un élément `<input>` avec type="button" et un attribut value valide ne nécessite pas l'ajout d'un libellé. Rajouter un libellé inutile pourra créer des interférences avec les outils d'assistance. Il en va de même pour l'élément `<button>`.
+
+On peut également créer un lien implicite en imbriquant l'élément <input> directement au sein d'un élément <label> . Dans ce cas, les attributs for et id ne sont plus nécessaires.
+
+    <label>Aimez-vous les petits pois ?
+        <input type="checkbox" name="petits_pois">
+    </label>

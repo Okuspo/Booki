@@ -1,4 +1,4 @@
-/* VARIABLES */
+/******************* VARIABLES *******************/
 :root {
 
     /* Default colors */
@@ -17,7 +17,10 @@
     --box-shadow-hover: 2px 2px 3px 3px rgba(0, 0, 0, 0.4);
 }
 
-/* GENERAL SETTINGS */
+/**************** [GLOBAL] SETTINGS ****************/
+/**************************************************/
+
+/* Custom CSS reset implemented before importing normalize.css */
 * {
     margin:0;
     padding:0;
@@ -26,24 +29,7 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    color:var(--clr-text-default);
-    cursor: pointer;
-    position: relative;
-    z-index: 3;
-       
-}
-
-h1, h2, h3 {
-    font-weight: var(--fw-bold);
-}
-
-h2 {
-    font-size: 1.8em;
-    margin-bottom: 1.2em;
-}
-
+/* Useless now: to check up  */
 html, body {
     width: 100%;
 }
@@ -55,15 +41,48 @@ body {
     align-items: center;
 }
 
-#wrapper {
-    width: 93%;
+/* Link styling and behavior */
+a {
+    text-decoration: none;
+    color:var(--clr-text-default);
+    cursor: pointer;
+
+    /*Relation position for City Results card links*/
+    position: relative;
+
+    /* Custom z-index for <a> to stay above .pseudo-element::after layer */
+    z-index: 3;
+       
 }
+
+/* Setting a bold font weight to titles */
+h1, h2, h3 {
+    font-weight: var(--fw-bold);
+}
+
+/* Setting custom font-size and bottom margin for section headings */
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 1.2em;
+}
+
+/* Declaring a custom margin-bottom value for sections */
 
 #search_section, #results_section, #activities_results {
     margin-bottom: 65px;
 }
 
-/* HEADER SECTION */
+/******************** BODY WRAPPER *******************/
+/** Preserves 3,5% margin on each side of the page **/
+
+#wrapper {
+    width: 93%;
+}
+
+
+/*********** HEADER AND NAVIGATION MENU ************/
+/**************************************************/
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -82,7 +101,6 @@ nav img {
 }
 
 #navlinks a:link, #navlinks a:visited {
-    /* color: black; */
     border: 2px solid transparent;
     padding: 10px 10px;
     display: block;
@@ -95,7 +113,9 @@ nav img {
 
 }
 
-/* SEARCH SECTION */
+
+/************* SEARCH FORM AND FILTERS *************/
+/**************************************************/
 
 button {
     cursor: pointer;
@@ -143,6 +163,8 @@ button {
     margin-bottom: 16px;
 }
 
+/*---- FontAwesome characters styling ----*/
+
 #fa_eco,
 #fa_fam,
 #fa_rom,
@@ -163,6 +185,9 @@ button {
 #fa_fam {
     padding: 15px 17px;
 }
+
+/*---- Search filters ----*/
+
 .filter {
     background-color: white;
     align-content: center;
@@ -172,6 +197,9 @@ button {
     border: 2px solid var(--clr-light-grey);
     border-radius: 50px;
 }
+
+
+/*---- info icon design ----*/
 
 span.info::before {
     display: inline-block;
@@ -188,40 +216,9 @@ span.info::before {
     color: var(--clr-blue);
 }
 
-/* RESULTS SECTION */
 
-#results_section {
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: space-between;
-    row-gap: 50px;
-
-}
-
-#city_results {
-    display: flex;
-    flex-basis: 75%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 15px;
-    border-radius: 15px;
-    background-color: var(--clr-light-grey);
-
-}
-
-#cr_title {
-    margin-left: 3%;
-    width: 100%;
-    padding-top: 20px;
-    align-self: flex-start;
-}
-
-#results_section h2 {
-    align-self: flex-start;
-    width: 100%;
-}
-
-/* Card design */
+/**************** [GLOBAL] CARD DESIGN ***************/
+/**** Applies to every type of cards in the page ****/
 
 .card {
     background-color: white;
@@ -232,7 +229,10 @@ span.info::before {
     transition: transform .25s ease;
 }
 
-/* Card shadow effect */
+
+/********** [GLOBAL] CARD SHADOW TRANSITION **********/
+/**** Applies to every type of cards in the page ****/
+
 .card:hover {
     transform: translateY(-2px) scale(1.02);
     transition: transform .25s ease;
@@ -268,7 +268,53 @@ span.info::before {
     transition: opacity .25s ease;
 } 
 
-/* City results card */
+
+/****************************************************/
+/********** [GLOBAL] RATING STARS PROPERTIES ********/
+
+.fa-star {
+    color:var(--clr-blue);
+}
+
+.empty_star {
+    color:var(--clr-light-grey);s
+}
+
+/****************************************************/
+/************** SECTION : CITY RESULTS **************/
+
+/* Section layout */
+#results_section {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    row-gap: 50px;
+
+}
+
+/* City Results: gallery */
+#city_results {
+    display: flex;
+    flex-basis: 75%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: var(--clr-light-grey);
+
+}
+
+/* City Results: title */
+#cr_title {
+    margin-left: 3%;
+    width: 100%;
+    padding-top: 20px;
+    align-self: flex-start;
+}
+
+
+/* City Results : card design */
+
 .cr_card {
     
     flex-basis: 30%;
@@ -308,19 +354,11 @@ span.info::before {
     
 }
 
-.fa-star {
-    color:var(--clr-blue);
-}
-
-.empty_star {
-    color:var(--clr-light-grey)
-}
-
-
-
-/* ASIDE : MOST POPULAR */
+/****************************************************/
+/************ASIDE : MOST POPULAR RESULTS************/
 
 #most_popular_results {
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -339,6 +377,9 @@ span.info::before {
 .fa-chart-line {
     font-size: 28px;
 }
+
+
+/**************** CARD MOST POPULAR ****************/
 
 .mpr_card {
     display: flex;
@@ -375,6 +416,8 @@ span.info::before {
     border-bottom-left-radius: 15px;
 }
 
+/********************************************************/
+/****************** ACTIVITIES RESULTS ******************/
 
 .ar_gallery {
     display: flex;
@@ -387,6 +430,8 @@ span.info::before {
     flex-direction: column;
     justify-content: space-between;
 }
+
+/**************** ACTIVITIES RESULTS CARDS ****************/
 
 .ar_card {
     
@@ -417,6 +462,9 @@ span.info::before {
     border-top-right-radius: 15px;
 }
 
+
+/* ACTIVITIES RESULTS : SMALL CARDS HEIGHTS */
+
 .big {
     height: 495px;
 }
@@ -440,6 +488,8 @@ span.info::before {
 ul {
     list-style-type: none;
 }
+/********************************************************/
+/*********************** FOOTER ************************/
 
 footer {
     width: 100%;

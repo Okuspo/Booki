@@ -13,8 +13,8 @@
     --fs--small: 1em;
 
     /* Box shadow */
-    --box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.2);
-    --box-shadow-hover: 2px 2px 3px 3px rgba(0, 0, 0, 0.4);
+    --box-shadow: 0px 1px 1px 2px rgba(0, 0, 0, 0.2);
+    --box-shadow-hover: 0px 5px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
 /**************** [GLOBAL] SETTINGS ****************/
@@ -179,7 +179,6 @@ button {
 #fa_eco {
 
     padding: 15px 13px;
-    
 }
 
 #fa_fam {
@@ -196,8 +195,17 @@ button {
     font-weight: var(--fw-bold);
     border: 2px solid var(--clr-light-grey);
     border-radius: 50px;
+    transform: scale(1);
+    transition: transform 0.5s ease;
 }
 
+.filter:hover {
+
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+    background-color: var(--clr-blue);
+    color: white;
+}
 
 /*---- info icon design ----*/
 
@@ -277,7 +285,7 @@ span.info::before {
 }
 
 .empty_star {
-    color:var(--clr-light-grey);s
+    color:var(--clr-light-grey);
 }
 
 /****************************************************/
@@ -288,14 +296,15 @@ span.info::before {
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: space-between;
-    row-gap: 50px;
+    gap : 3%;
 
 }
 
 /* City Results: gallery */
 #city_results {
     display: flex;
-    flex-basis: 75%;
+    /* flex-basis: 75%; */
+    flex: 1 1 75%;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 15px;
@@ -488,6 +497,7 @@ span.info::before {
 ul {
     list-style-type: none;
 }
+
 /********************************************************/
 /*********************** FOOTER ************************/
 
@@ -508,4 +518,20 @@ footer div {
 
 footer * {
     margin-bottom: 1em;
+}
+
+/********************************************************/
+/******************** MEDIA QUERIES *********************/
+
+/***************Tablet specific rules********************/
+
+@media screen and (max-width: 992px) {
+
+
+}
+
+/***************Mobile specific rules********************/
+@media screen and (max-width: 768px) {
+
+
 }

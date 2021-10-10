@@ -9,6 +9,7 @@
 - [Jour 3](#j3)
 - [Jour 4](#j4)
 - [Jour 5](#j5)
+- [Jour 6](#j6)
 
 ___
 
@@ -788,3 +789,27 @@ On peut également créer un lien implicite en imbriquant l'élément <input> di
     <label>Aimez-vous les petits pois ?
         <input type="checkbox" name="petits_pois">
     </label>
+
+
+Container query instead of media queries : <br>
+https://www.youtube.com/watch?v=fuiEYR6Hoe0
+
+Est-ce que max-width est inclusif ? : Oui.
+
+https://stackoverflow.com/questions/13241531/what-are-the-rules-for-css-media-query-overlap
+
+
+# <a name="j6"> Jour 6 </a>
+
+Objectifs du jour : 
+
+- Section Hébergements à Marseille : comprendre comment flex-grow et flex-shrink se comportent pour remplacer le flex-basis. Faire des tests à côté
+- Section Filtres : faire une animation sur les filtres (simple et performante).<br> Probablement juste un scale(1,xx)
+- Vérifier si des changements de layout sont nécessaires avec un breakpoint à 768px
+- Faire le style pour les mobiles
+
+- Mettre les icones des filtres dans des divs : pour éviter le padding individuel en pixel des icones... mieux : mettre les icones en ::before
+
+
+
+

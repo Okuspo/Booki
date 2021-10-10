@@ -77,6 +77,8 @@ h2 {
 
 #wrapper {
     width: 93%;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -118,21 +120,25 @@ nav img {
 /**************************************************/
 
 button {
+
     cursor: pointer;
 }
 
 #search_form {
+
     display: flex;
     flex-direction: column;
 }
 
 #search_input_container {
+
     display: flex;
     align-items: center;
     margin-bottom: 16px;
 }
 
 .fa-map-marker-alt {
+
     padding: 16px;
     background-color: var(--clr-light-grey);    
     border-top-left-radius: 10px;
@@ -140,6 +146,7 @@ button {
 }
 
 #search_input_container input {
+
     border: none;
     border-top: 1px solid var(--clr-light-grey);
     border-bottom: 1px solid var(--clr-light-grey);
@@ -148,6 +155,7 @@ button {
 }
 
 #search_input_container button {
+
     background-color: var(--clr-blue);
     color: white;
     border: none;
@@ -157,6 +165,7 @@ button {
 }
 
 #search_filters {
+
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -169,6 +178,7 @@ button {
 #fa_fam,
 #fa_rom,
 #fa_ani {
+
     color:var(--clr-blue);
     background-color: var(--clr-light-blue);
     padding: 15px 15px;
@@ -188,6 +198,7 @@ button {
 /*---- Search filters ----*/
 
 .filter {
+
     background-color: white;
     align-content: center;
     margin: 16px;
@@ -195,21 +206,20 @@ button {
     font-weight: var(--fw-bold);
     border: 2px solid var(--clr-light-grey);
     border-radius: 50px;
-    transform: scale(1);
-    transition: transform 0.5s ease;
+    
 }
 
 .filter:hover {
 
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
     background-color: var(--clr-blue);
     color: white;
 }
 
+
 /*---- info icon design ----*/
 
 span.info::before {
+
     display: inline-block;
     font-style: normal;
     font-variant: normal;
@@ -229,6 +239,7 @@ span.info::before {
 /**** Applies to every type of cards in the page ****/
 
 .card {
+
     background-color: white;
     box-shadow: var(--box-shadow);
     margin: min(5px, 5%);
@@ -242,6 +253,7 @@ span.info::before {
 /**** Applies to every type of cards in the page ****/
 
 .card:hover {
+
     transform: translateY(-2px) scale(1.02);
     transition: transform .25s ease;
 }
@@ -281,44 +293,47 @@ span.info::before {
 /********** [GLOBAL] RATING STARS PROPERTIES ********/
 
 .fa-star {
+
     color:var(--clr-blue);
 }
 
 .empty_star {
+
     color:var(--clr-light-grey);
 }
+
 
 /****************************************************/
 /************** SECTION : CITY RESULTS **************/
 
 /* Section layout */
 #results_section {
+
     display: flex;
     flex-wrap: wrap-reverse;
-    justify-content: space-between;
-    gap : 3%;
+    justify-content: center;
+    gap : 20px 3%;
 
 }
 
 /* City Results: gallery */
 #city_results {
+
     display: flex;
-    /* flex-basis: 75%; */
-    flex: 1 1 75%;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 15px;
+    flex: 1 1 70%;
+    gap: 2em 1em;
+    padding: 2em 2em;
     border-radius: 15px;
     background-color: var(--clr-light-grey);
-
 }
 
 /* City Results: title */
 #cr_title {
-    margin-left: 3%;
+
     width: 100%;
-    padding-top: 20px;
-    align-self: flex-start;
+
 }
 
 
@@ -326,13 +341,15 @@ span.info::before {
 
 .cr_card {
     
-    flex-basis: 30%;
+    flex: 1 1 30%;
+    min-width: 200px; /* Here I would have preferred using ch units. */
     border: 5px solid white;
     border-radius: 15px;
-    margin-bottom: 2%;
+    
 }
 
 .cr_card img {
+
     height: 190px;
     width: 100%;
     object-fit: cover;
@@ -341,6 +358,7 @@ span.info::before {
 }
 
 .cr_card_details {
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -348,17 +366,15 @@ span.info::before {
 }
 
 .cr_card_details h2, p, .rating {
+
     margin-bottom: 10px;
 }
 
 /* "Show more" link */
 
-#show_more {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 3%;
+a#show_more {
+
     width: 100%;
-    align-self: flex-end;
     font-weight: var(--fw-bold);
     
 }
@@ -369,6 +385,7 @@ span.info::before {
 #most_popular_results {
     
     display: flex;
+    flex: 0 0 20%;
     flex-direction: column;
     justify-content: space-around;
     padding: 0 15px 15px 15px;
@@ -377,6 +394,7 @@ span.info::before {
 }
 
 .mpr_title {
+
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -391,6 +409,7 @@ span.info::before {
 /**************** CARD MOST POPULAR ****************/
 
 .mpr_card {
+
     display: flex;
     flex-direction: row;
     width: 340px;
@@ -402,17 +421,19 @@ span.info::before {
 }
 
 .mpr_card_details {
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 60%;
     margin-top: 2%;
     margin-left: 5%;
-    padding-right: 20px;
+    padding-right: 5%;
 
 }
 
 .mpr_card_details p {
+
     flex-grow: 1;
 }
 
@@ -429,12 +450,14 @@ span.info::before {
 /****************** ACTIVITIES RESULTS ******************/
 
 .ar_gallery {
+
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
 }
 
 .ar_column {
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -444,6 +467,7 @@ span.info::before {
 
 .ar_card {
     
+    max-height: 495px;
     width: 302px;
     display: flex;
     flex-direction: column-reverse;
@@ -453,6 +477,7 @@ span.info::before {
 }
 
 .ar_card h3 {
+
     display: flex;
     height: 64px;
     padding-left: 2%;
@@ -463,6 +488,7 @@ span.info::before {
 }
 
 .ar_card img {
+
     align-self: flex-end;
     height: calc(100% - 64px);
     width: 100%;
@@ -502,6 +528,7 @@ ul {
 /*********************** FOOTER ************************/
 
 footer {
+
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -510,6 +537,7 @@ footer {
 
 
 footer div {
+
     padding: 100px 0 100px 0 ;
     margin-left: 3.5%;
     margin-right: 3.5%;
@@ -517,6 +545,7 @@ footer div {
 }
 
 footer * {
+
     margin-bottom: 1em;
 }
 

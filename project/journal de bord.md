@@ -811,5 +811,7 @@ Objectifs du jour :
 - Mettre les icones des filtres dans des divs : pour éviter le padding individuel en pixel des icones... mieux : mettre les icones en ::before
 
 
+- J'utilise gap pour des containers flex : non supporté par Safari
+Safari ne supporte gap que pour les grid.
 
 

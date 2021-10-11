@@ -472,7 +472,7 @@ footer * {
 }
  */
 /***************Mobile specific rules********************/
-
+/* 
 @media screen and (max-width: 768px) {
 
     #wrapper {
@@ -492,7 +492,7 @@ footer * {
     
     #navlinks {
         display: flex;
-        /* width: 100%; */
+        
         justify-content: center;
         align-items: center;
 
@@ -501,7 +501,7 @@ footer * {
     #navlinks li {
         display: flex;
         justify-content: stretch;
-        /* width: 50%; */
+        
     }
     #navlinks a:link, #navlinks a:visited {
         border: 3px solid transparent;
@@ -532,4 +532,4 @@ footer * {
     .ar-card {
         max-height: 170px;
     }
-}
+} */

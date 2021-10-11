@@ -6,6 +6,14 @@
     --clr-light-blue: #DEEBFF;
     --clr-light-grey: #F2F2F2;
     --clr-text-default: #000;
+
+    /* FontAwesome icons */
+    --fa-eco: "\f53a";
+    --fa-fam: "\f1ae";
+    --fa-rom: "\f004";
+    --fa-ani: "\f6d3";
+    --fa-info: "\f129";
+
     /* Titles font weight */
     --fw-bold: 700;
     
@@ -22,11 +30,10 @@
 
 /* Custom CSS reset implemented before importing normalize.css */
 * {
-    margin:0;
-    padding:0;
     font-family: 'Raleway', sans-serif;
-    font-size: 16px;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Useless now: to check up  */
@@ -34,51 +41,25 @@ html, body {
     width: 100%;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 /* Link styling and behavior */
 a {
     text-decoration: none;
     color:var(--clr-text-default);
     cursor: pointer;
-
-    /*Relation position for City Results card links*/
-    position: relative;
-
-    /* Custom z-index for <a> to stay above .pseudo-element::after layer */
-    z-index: 3;
-       
+    position: relative; /*Relation position for City Results card links*/
+    z-index: 3; /* Custom z-index for <a> to stay above .pseudo-element::after layer */
 }
 
-/* Setting a bold font weight to titles */
-h1, h2, h3 {
-    font-weight: var(--fw-bold);
-}
-
-/* Setting custom font-size and bottom margin for section headings */
-h2 {
-    font-size: 1.8em;
-    margin-bottom: 1.2em;
-}
-
-/* Declaring a custom margin-bottom value for sections */
-
-#search_section, #results_section, #activities_results {
-    margin-bottom: 65px;
-}
 
 /******************** BODY WRAPPER *******************/
 /** Preserves 3,5% margin on each side of the page **/
 
 #wrapper {
+    margin: auto;
     width: 93%;
     display: flex;
     flex-direction: column;
+    gap: 60px 0;
 }
 
 
@@ -87,14 +68,13 @@ h2 {
 
 nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    height: 100px;
 }
 
-nav img {
+#logo-booki {
     height: 50px;
-    width: auto;
 }
 
 #navlinks {
@@ -104,15 +84,12 @@ nav img {
 
 #navlinks a:link, #navlinks a:visited {
     border: 2px solid transparent;
-    padding: 10px 10px;
-    display: block;
-    
+    display: flex;
 }
 
 #navlinks a:hover, #navlinks a:active {
     color: var(--clr-blue);
     border-top: 2px solid var(--clr-blue);
-
 }
 
 
@@ -120,33 +97,28 @@ nav img {
 /**************************************************/
 
 button {
-
     cursor: pointer;
 }
 
-#search_form {
-
+#search-form {
     display: flex;
     flex-direction: column;
 }
 
-#search_input_container {
-
+#search-input-container {
     display: flex;
     align-items: center;
     margin-bottom: 16px;
 }
 
 .fa-map-marker-alt {
-
     padding: 16px;
     background-color: var(--clr-light-grey);    
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-#search_input_container input {
-
+#search-input-container input {
     border: none;
     border-top: 1px solid var(--clr-light-grey);
     border-bottom: 1px solid var(--clr-light-grey);
@@ -154,8 +126,7 @@ button {
     font-weight: var(--fw-bold);
 }
 
-#search_input_container button {
-
+#search-input-container button {
     background-color: var(--clr-blue);
     color: white;
     border: none;
@@ -164,61 +135,41 @@ button {
     border-bottom-right-radius: 10px;
 }
 
-#search_filters {
+/*---- Search filters ----*/
 
+#search-filters {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     margin-bottom: 16px;
 }
 
-/*---- FontAwesome characters styling ----*/
-
-#fa_eco,
-#fa_fam,
-#fa_rom,
-#fa_ani {
-
-    color:var(--clr-blue);
-    background-color: var(--clr-light-blue);
-    padding: 15px 15px;
-    border-radius: 50%;
-    margin-left: -5px;
-}
-
-#fa_eco {
-
-    padding: 15px 13px;
-}
-
-#fa_fam {
-    padding: 15px 17px;
-}
-
-/*---- Search filters ----*/
-
 .filter {
-
     background-color: white;
     align-content: center;
     margin: 16px;
-    padding: 0 16px 0 0;
+    padding: 0 20px 0 0px;
     font-weight: var(--fw-bold);
     border: 2px solid var(--clr-light-grey);
     border-radius: 50px;
-    
 }
 
 .filter:hover {
-
-    background-color: var(--clr-blue);
     color: white;
+    background-color: var(--clr-blue);
+    border-color:var(--clr-blue);
 }
 
 
-/*---- info icon design ----*/
 
-span.info::before {
+/*---- Filter icons ----*/
+
+button#eco::before {content: var(--fa-eco); padding: 1.1em 1em;}
+button#fam::before {content: var(--fa-fam); padding: 1em 1.2em;}
+button#rom::before {content: var(--fa-rom);}
+button#ani::before {content: var(--fa-ani);}
+
+button.filter::before {
 
     display: inline-block;
     font-style: normal;
@@ -227,7 +178,24 @@ span.info::before {
     -webkit-font-smoothing: antialiased;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f129";
+    padding : 1.1em 1.1em;
+    border : 1px solid var(--clr-light-blue);
+    margin: -2px;
+    background-color: var(--clr-light-blue);
+    border-radius: 50%;
+    color: var(--clr-blue);
+}
+
+
+span.info::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: var(--fa-info);
     padding : 4px 10px;
     border : 1px solid var(--clr-light-grey);
     border-radius: 50%;
@@ -239,7 +207,6 @@ span.info::before {
 /**** Applies to every type of cards in the page ****/
 
 .card {
-
     background-color: white;
     box-shadow: var(--box-shadow);
     margin: min(5px, 5%);
@@ -253,19 +220,16 @@ span.info::before {
 /**** Applies to every type of cards in the page ****/
 
 .card:hover {
-
     transform: translateY(-2px) scale(1.02);
     transition: transform .25s ease;
 }
 
-.pseudo-hover {
-    
+.pseudo-hover {  
     position: relative;
     
 }
 
-.pseudo-hover::after {
-    
+.pseudo-hover::after { 
     content:'';
     position: absolute;
     top: 0;
@@ -276,10 +240,9 @@ span.info::before {
     border-radius: 15px;
     box-shadow: var(--box-shadow-hover);
     transition: opacity .25s ease;
-    
 }
 
-.cr_card.pseudo-hover::after {
+.cr-card.pseudo-hover::after {
     margin: -5px;
 }
 
@@ -293,12 +256,10 @@ span.info::before {
 /********** [GLOBAL] RATING STARS PROPERTIES ********/
 
 .fa-star {
-
     color:var(--clr-blue);
 }
 
-.empty_star {
-
+.empty-star {
     color:var(--clr-light-grey);
 }
 
@@ -307,18 +268,15 @@ span.info::before {
 /************** SECTION : CITY RESULTS **************/
 
 /* Section layout */
-#results_section {
-
+#results-section {
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: center;
     gap : 20px 3%;
-
 }
 
 /* City Results: gallery */
-#city_results {
-
+#city-results {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -330,26 +288,21 @@ span.info::before {
 }
 
 /* City Results: title */
-#cr_title {
-
+#cr-title {
     width: 100%;
-
 }
 
 
 /* City Results : card design */
 
-.cr_card {
-    
+.cr-card {
     flex: 1 1 30%;
     min-width: 200px; /* Here I would have preferred using ch units. */
     border: 5px solid white;
-    border-radius: 15px;
-    
+    border-radius: 15px; 
 }
 
-.cr_card img {
-
+.cr-card img {
     height: 190px;
     width: 100%;
     object-fit: cover;
@@ -357,8 +310,7 @@ span.info::before {
     border-top-right-radius: 15px;
 }
 
-.cr_card_details {
-
+.cr-card-details {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -366,82 +318,63 @@ span.info::before {
 }
 
 .cr_card_details h2, p, .rating {
-
     margin-bottom: 10px;
 }
 
 /* "Show more" link */
 
-a#show_more {
-
+a#show-more {
     width: 100%;
-    font-weight: var(--fw-bold);
-    
+    font-weight: var(--fw-bold); 
 }
 
 /****************************************************/
 /************ASIDE : MOST POPULAR RESULTS************/
 
-#most_popular_results {
-    
+#most-popular-results {  
     display: flex;
     flex: 0 0 20%;
     flex-direction: column;
+    align-items: center;
     justify-content: space-around;
-    padding: 0 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
+    gap: 2em 0;
     border-radius: 15px;
     background-color: var(--clr-light-grey);
 }
 
-.mpr_title {
-
+.mpr-title {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 5px;
 }
-
-.fa-chart-line {
-    font-size: 28px;
-}
-
 
 /**************** CARD MOST POPULAR ****************/
-
-.mpr_card {
-
+.mpr-card {
     display: flex;
     flex-direction: row;
     width: 340px;
     height: 140px;
     border-radius: 15px;
-    padding: 5px;
-    font-size: var(--fs--small);
-
+    /* padding: 5px; */
 }
 
-.mpr_card_details {
-
+.mpr-card-details {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    padding-top: 2%;
     width: 60%;
-    margin-top: 2%;
-    margin-left: 5%;
-    padding-right: 5%;
-
 }
 
-.mpr_card_details p {
-
+.mpr-card-details p {
     flex-grow: 1;
 }
 
-.mpr_card img {
-    
+.mpr-card img {  
     height:100%;
     width: 40%;
     object-fit: cover;
+    border: 5px solid white;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
@@ -449,103 +382,81 @@ a#show_more {
 /********************************************************/
 /****************** ACTIVITIES RESULTS ******************/
 
-.ar_gallery {
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-
-.ar_column {
-
+#activities-results {
     display: flex;
     flex-direction: column;
+    gap: 1em 0;
+    margin-bottom: 2em;
+}
+
+.ar-gallery {
+    display: flex;
+    flex-flow: column wrap;
+    width : 100%;
+    height: 500px;
     justify-content: space-between;
 }
+
 
 /**************** ACTIVITIES RESULTS CARDS ****************/
 
-.ar_card {
-    
-    max-height: 495px;
-    width: 302px;
+.ar-card {
     display: flex;
     flex-direction: column-reverse;
+    max-height: 495px;
+    width: 302px;
     background-color: white;
     border-radius: 15px;
-
 }
 
-.ar_card h3 {
-
+.ar-card h3 {
     display: flex;
     height: 64px;
     padding-left: 2%;
     align-items: center;
-    background-color: white;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 
-.ar_card img {
-
-    align-self: flex-end;
+.ar-card img {
+    object-fit: cover;
     height: calc(100% - 64px);
     width: 100%;
-    object-fit: cover;
+    align-self: flex-end;        
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
+/* ACTIVITIES RESULTS : CARDS HEIGHTS */
 
-/* ACTIVITIES RESULTS : SMALL CARDS HEIGHTS */
+.big {height: 495px;}
+.small-1 {height: 235px;}
+.small-2 {height: 170px;}
+.small-3 {height: 195px;}
+.small-4 {height: 209px;}
 
-.big {
-    height: 495px;
-}
-
-.small_1 {
-    height: 235px;
-}
-
-.small_2 {
-    height: 170px;
-}
-
-.small_3 {
-    height: 195px;
-}
-
-.small_4 {
-    height: 209px;
-}
-
-ul {
-    list-style-type: none;
-}
 
 /********************************************************/
 /*********************** FOOTER ************************/
 
 footer {
-
-    width: 100%;
     display: flex;
     justify-content: flex-start;
     background-color: var(--clr-light-grey);
 }
 
-
 footer div {
-
     padding: 100px 0 100px 0 ;
     margin-left: 3.5%;
     margin-right: 3.5%;
     width: calc(100%/3);
 }
 
-footer * {
+ul {
+    list-style-type: none;
+}
 
+footer * {
     margin-bottom: 1em;
 }
 
@@ -554,13 +465,71 @@ footer * {
 
 /***************Tablet specific rules********************/
 
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
 
+    
 
 }
-
+ */
 /***************Mobile specific rules********************/
+
 @media screen and (max-width: 768px) {
 
+    #wrapper {
+        width: 100%;
+    }
 
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    #logo-booki {
+        height: auto;
+    }
+    
+    #navlinks {
+        display: flex;
+        /* width: 100%; */
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+    #navlinks li {
+        display: flex;
+        justify-content: stretch;
+        /* width: 50%; */
+    }
+    #navlinks a:link, #navlinks a:visited {
+        border: 3px solid transparent;
+        padding: calc((90px - 1em) / 2);
+        display: flex;
+        border-bottom: 3px solid var(--clr-light-grey);
+    }
+    
+    #navlinks a:hover, #navlinks a:active {
+        color: var(--clr-blue);
+        border-bottom: 3px solid var(--clr-blue);
+    }
+
+    #city-results {
+        background-color: white;
+    }
+
+    #most-popular-results {
+        border-radius: 0;
+        flex-grow: 1;
+        align-items: center; 
+    }
+
+    .ar-gallery {
+        height: auto;
+        align-items: center;
+    }
+    .ar-card {
+        max-height: 170px;
+    }
 }

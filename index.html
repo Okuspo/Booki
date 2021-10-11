@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Feuilles de style CSS -->
     <link href="style/style.css" type="text/css" rel="stylesheet">
@@ -26,7 +25,7 @@
         <!-- HEADER NAVIGATION MENU -->
         <header>
             <nav>
-                <a href="#"><img src="assets/logo/Booki.png" alt="logo"></a>
+                <a href="#" id="logo-booki"><img src="assets/logo/Booki.png" alt="logo"></a>
                 
                 <ul id="navlinks">
                     <li><a href="#city_results">Hébergement</a></li>
@@ -37,42 +36,42 @@
         </header>   
         
         <!-- WELCOME SECTION -->
-        <section id="welcome_section">
+        <section id="welcome-section">
             <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
             <p>En plein centre ville ou en pleine nature</p>
         </section>
 
         <!-- SEARCH SECTION -->
-        <section id="search_section">
+        <section id="search-section">
             
             <!-- Search form -->
-            <form id="search_form" method="post" action="#">
+            <form id="search-form" method="post" action="#">
 
-                <div id="search_input_container">
+                <div id="search-input-container">
                     <i class="fas fa-map-marker-alt"></i>
-                    <label><input name="search_location" type="search" value="Marseille, France" placeholder="Où allez-vous ?"></label>
+                    <label><input name="search-location" type="search" value="Marseille, France" placeholder="Où allez-vous ?"></label>
                     <button name="rechercher" form="search_form" type="submit">Rechercher</button>
                 </div>
 
                 <!-- Search filters -->
-                <div id="search_filters">
+                <div id="search-filters">
                     
                     <h3>Filtres</h3>
                 
-                    <button class="filter">
-                       <i class="fas fa-money-bill-wave" id="fa_eco"></i> &Eacute;conomique
+                    <button class="filter" id="eco">
+                     &Eacute;conomique
                     </button>
 
-                    <button class="filter">
-                        <i class="fas fa-child" id="fa_fam"></i> Familial
+                    <button class="filter" id="fam">
+                        Familial
                     </button>
 
-                    <button class="filter">
-                        <i class="fas fa-heart" id=fa_rom></i> Romantique
+                    <button class="filter" id="rom">
+                        Romantique
                     </button>
 
-                    <button class="filter">
-                        <i class="fas fa-dog" id=fa_ani></i> Animaux autorisés
+                    <button class="filter" id="ani">
+                        Animaux autorisés
                     </button>
 
                 </div>
@@ -80,22 +79,22 @@
             
             <!-- Search info -->
             <span class="info">
-              <!--   <i class="fas fa-info"></i> --> Plus de 500 logements sont disponibles dans cette ville.
+               Plus de 500 logements sont disponibles dans cette ville.
             </span>
         </section>
 
         <!-- RESULTS SECTION-->
-        <section id="results_section">
+        <section id="results-section">
 
-            <div id="city_results">
+            <div id="city-results">
                 
-                <h2 id="cr_title">Hébergements à Marseille</h2>
+                <h2 id="cr-title">Hébergements à Marseille</h2>
                 
-                <article class="card pseudo-hover cr_card">
+                <article class="card pseudo-hover cr-card">
                     <a href="#">
                         <img src="assets/hebergements/4_small/auberge_la_cannebiere.jpg" alt="Auberge la Cannebière">
                         
-                        <div class="cr_card_details">
+                        <div class="cr-card-details">
                             <h3>Auberge La Cannebière</h3>
                             <p>Nuit à partir de <b>25€</b></p>
                             <div class="rating">
@@ -103,17 +102,17 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star empty_star" ></i>
+                                <i class="fas fa-star empty-star" ></i>
                             </div>
                         </div>
                     </a>
                 </article>
                 
-                <article class="card pseudo-hover cr_card">
+                <article class="card pseudo-hover cr-card">
                     <a href="#">
                         <img src="assets/hebergements/4_small/hotel_du_port.jpg" alt="Auberge du Port">
                         
-                        <div class="cr_card_details">
+                        <div class="cr-card-details">
                             <h3>Hôtel du port</h3>
                             <p>Nuit à partir de <b>52€</b></p>
                             <div class="rating">
@@ -127,11 +126,11 @@
                     </a>
                 </article>
 
-                <article class="card pseudo-hover cr_card">
+                <article class="card pseudo-hover cr-card">
                     <a href="#">
                         <img src="assets/hebergements/4_small/hotel_les_mouettes.jpg" alt="Hôtel les Mouettes">
                         
-                        <div class="cr_card_details">
+                        <div class="cr-card-details">
                             <h3>Hôtel Les mouettes</h3>
                             <p>Nuit à partir de <b>76€</b></p>
                             <div class="rating">
@@ -139,35 +138,35 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star empty_star"></i>
+                                <i class="fas fa-star empty-star"></i>
                             </div>
                         </div>
                     </a>
                 </article>
 
-                <article class="card pseudo-hover cr_card">
+                <article class="card pseudo-hover cr-card">
                     <a href="#">
                         <img src="assets/hebergements/4_small/hotel_de_la_mer.jpg" alt="Hôtel de la mer">
                         
-                        <div class="cr_card_details">
+                        <div class="cr-card-details">
                             <h3>Hôtel de la mer</h3>
                             <p>Nuit à partir de <b>46€</b></p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star empty_star"></i>
-                                <i class="fas fa-star empty_star"></i>
+                                <i class="fas fa-star empty-star"></i>
+                                <i class="fas fa-star empty-star"></i>
                             </div>
                         </div>
                     </a>
                 </article>
 
-                <article class="card pseudo-hover cr_card">
+                <article class="card pseudo-hover cr-card">
                     <a href="#">
                         <img src="assets/hebergements/4_small/auberge_le_panier.jpg" alt="Auberge Le Panier">
                         
-                        <div class="cr_card_details">
+                        <div class="cr-card-details">
                             <h3>Auberge Le Panier</h3>
                             <p>Nuit à partir de <b>23€</b></p>
                             <div class="rating">
@@ -175,17 +174,17 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star empty_star"></i>
+                                <i class="fas fa-star empty-star"></i>
                             </div>
                         </div>
                     </a>
                 </article>
 
-                <article class="card pseudo-hover cr_card">
+                <article class="card pseudo-hover cr-card">
                     <a href="#">
                         <img src="assets/hebergements/4_small/hotel_chez_amina.jpg" alt="Hôtel chez Amina">
                         
-                        <div class="cr_card_details">
+                        <div class="cr-card-details">
                             <h3>Hôtel chez Amina</h3>
                             <p>Nuit à partir de <b>96€</b></p>
                             <div class="rating">
@@ -200,24 +199,24 @@
                 </article>
 
                 <!-- "Show more" link -->
-                <a href="#" id="show_more">Afficher plus</a>
+                <a href="#" id="show-more">Afficher plus</a>
                
             </div>
 
 
             <!-- ASIDE : MOST POPULAR RESULTS-->
-            <aside id="most_popular_results">
+            <aside id="most-popular-results">
                
-                <div class="mpr_title">
+                <div class="mpr-title">
                     <h2>Les plus populaires</h2>
-                    <p><i class="fas fa-chart-line"></i><p>
+                    <h2><i class="fas fa-chart-line"></i><h2>
                 </div>
 
                     <article>
                         <a href="#">
-                            <div class="card pseudo-hover mpr_card">
+                            <div class="card pseudo-hover mpr-card">
                                 <img src="assets/hebergements/4_small/hotel_le_soleil_du_matin.jpg" alt="Hôtel le Soleil du Matin">
-                                <div class="mpr_card_details">
+                                <div class="mpr-card-details">
                                     <h3>Hôtel le soleil du matin</h3>
                                     <p>Nuit à partir de <b>128€</b></p>
                                     <div class="rating">
@@ -234,9 +233,9 @@
                 
                     <article>
                         <a href="#">
-                            <div class="card pseudo-hover mpr_card">
+                            <div class="card pseudo-hover mpr-card">
                                 <img src="assets/hebergements/4_small/hotel_au_coeur_de_l'eau.jpg" alt="Hotel Au Coeur de l'Eau">
-                                <div class="mpr_card_details">
+                                <div class="mpr-card-details">
                                     <h3>Au coeur de l'eau Chambres d'hôtes</h3>
                                     <p>Nuit à partir de <b>71€</b></p>
                                     <div class="rating">
@@ -244,7 +243,7 @@
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
-                                        <i class="fas fa-star empty_star"></i>
+                                        <i class="fas fa-star empty-star"></i>
                                     </div>
                                 </div>
                             </div>
@@ -253,9 +252,9 @@
                                 
                     <article>
                         <a href="#">
-                            <div class="card pseudo-hover mpr_card">
+                            <div class="card pseudo-hover mpr-card">
                                 <img src="assets/hebergements/4_small/hotel_tout_bleu_et_blanc.jpg" alt="Hotel tout Bleu et Blanc">
-                                <div class="mpr_card_details">
+                                <div class="mpr-card-details">
                                     <h3>Hôtel Tout bleu et Blanc</h3>
                                     <p>Nuit à partir de <b>61€</b></p>
                                     <div class="rating">
@@ -263,7 +262,7 @@
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
-                                        <i class="fas fa-star empty_star"></i>
+                                        <i class="fas fa-star empty-star"></i>
                                     </div>
                                 </div>
                             </div>
@@ -275,88 +274,71 @@
         </section>
 
         <!-- SECTION ACTIVITES -->
-        <section id="activities_results">
+        <section id="activities-results">
            
-            <h2>Activités à Marseille</h2>
+            <h2>Activités à Marseille</h2>   
 
-            <div class="ar_gallery">
-                
-                <!-- Colonne 1 : une grande carte -->
-            
+            <div class="ar-gallery">
+
                 <article>
                     <a href="#">
-                        <div class="card pseudo-hover ar_card big">
+                        <div class="card pseudo-hover ar-card big">
                                 <h3>Vieux Port</h3>
                                 <img src="assets/activites/4_small/vieux_port.jpg" alt="Vieux Port">
                         </div>
                     </a>
                 </article>
             
-
-                <!-- Colonne 2 : deux petites cartes -->
-                <div class="ar_column">
-                    
-                    <!--Petite carte 1 -->
-                    <article>
-                        <a href="#">
-                            <div class="card pseudo-hover ar_card small_1">
-                                <h3>Fort de Pomègues</h3>
-                                <img src="assets/activites/4_small/fort_de_pomegues.jpg" alt="Fort de Pomeges">
-                            </div>
-                        </a>
-                    </article>
-
-                    <!--Petite carte 2 -->
-                    <article class="card pseudo-hover ar_card small_2">
-                        <h3>Îles du Frioul</h3>
-                        <img src="assets/activites/4_small/iles_du_frioul.jpg" alt="Iles du Frioul">
-                    </article>
-
-                </div>
-
-                <!-- Colonne 3 : grande carte 2 -->
-
                 <article>
                     <a href="#">
-                        <div class="card pseudo-hover ar_card big">
-                            <h3>Parc National des Calanques</h3>
-                            <img src="assets/activites/4_small/parc_national_des_calanques.jpg" alt="Parc National des Calanques">
+                        <div class="card pseudo-hover ar-card small-1">
+                            <h3>Fort de Pomègues</h3>
+                            <img src="assets/activites/4_small/fort_de_pomegues.jpg" alt="Fort de Pomeges">
                         </div>
                     </a>
                 </article>
 
-                <!-- Colonne 4 : deux petites cartes -->
-                <div class="ar_column">
-                    
-                    <!-- Petite carte 3 -->
-                    <article>
-                        <a href="#">
-                            <div class="card pseudo-hover ar_card small_3">
-                                <h3>Notre-Dame-de-la-Garde</h3>
-                                <img src="assets/activites/4_small/notre_dame_de_la_garde.jpg" alt="Notre Dame de la Garde">
-                            </div>
-                        </a>
-                    </article>
-                
-                    <!--Petite carte 4 -->
-                    <article>
-                        <a href="#">
-                            <div class="card pseudo-hover ar_card small_4">        
-                                <h3>Parc Longchamp</h3>
-                                <img src="assets/activites/4_small/parc_longchamp.jpg" alt="Parc Longchamp">
-                            </div>
-                        </a>
-                    </article>
+                <article class="card ar-card pseudo-hover small-2">
+                    <h3>Îles du Frioul</h3>
+                    <img src="assets/activites/4_small/iles_du_frioul.jpg" alt="Iles du Frioul">
+                </article>
 
-                </div>
+
+                <article>
+                    <a href="#">
+                        <div class="card pseudo-hover ar-card big">
+                            <h3>Parc National des Calanques</h3>
+                            <img src="assets/activites/4_small/parc_national_des_calanques.jpg" alt="Parc National des Calanques">
+                        </div>
+                    </a>
+                </article>             
+                    
+                <article>
+                    <a href="#">
+                        <div class="card pseudo-hover ar-card small-3">
+                            <h3>Notre-Dame-de-la-Garde</h3>
+                            <img src="assets/activites/4_small/notre_dame_de_la_garde.jpg" alt="Notre Dame de la Garde">
+                        </div>
+                    </a>
+                </article>
+            
+                <article>
+                    <a href="#">
+                        <div class="card pseudo-hover ar-card small-4">        
+                            <h3>Parc Longchamp</h3>
+                            <img src="assets/activites/4_small/parc_longchamp.jpg" alt="Parc Longchamp">
+                        </div>
+                    </a>
+                </article>
+
+                
             </div>
 
         </section>
         
     </div>
-
+    
     <footer>
-
         <div id="about">
             <h3>A propos</h3>
             <ul>

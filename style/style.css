@@ -180,10 +180,11 @@ nav {
     font-size: 24px;
     color: white;
     border: none;
-    height: 60px;
+    height: 50px;
     width: 60px;
+    min-width: 60px;
     margin-left: -20px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 
@@ -617,6 +618,10 @@ footer * {
         margin-bottom: 50px;
     }
 
+    .nav-link {
+        min-width: 100px;
+    }
+
     .links-container {
         width: 100%;
     }
@@ -632,12 +637,20 @@ footer * {
         color: var(--clr-blue);
         border: none;
         border-bottom: 2px solid var(--clr-blue);
-        
     }
 
     .fa-map-marker-alt {
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
+        height: 50px;
+        padding: 20px;
+    }
+
+    /* Search section */
+    #search-input-container input {
+        padding: 0 5px 0 5px;
+        height: 50px;
+        font-size: 16px;
     }
 
     #search-btn-full {
@@ -647,32 +660,50 @@ footer * {
     #search-btn-icn {
         display: initial;
     }
-
-
+    /* Search filters */
+    .filter {
+        font-size: 16px;
+        height: 50px;
+    }
 
     /* Removing side margins as shown on mobile mockup */
     #results-section {
         margin: 0;
+        margin-bottom: 50px;
     }
 
     /* Switching city results to white background as in mockup*/
     #city-results {
         background-color: white;
-        flex-direction: column;
+        padding: 20px;
+        gap: 20px 0;
+        border-radius: 0;
+        
     }
 
+    .cr-card {
+        flex: 1 1 100%;
+    }
     /* Removing rounded borders */
     #most-popular-results {
         border-radius: 0;
+        padding: 50px 25px 50px 25px;
+    }
+
+    .mpr-card {
+        font-size: 14px;
+        min-width: 250px;
     }
 
     /* Resizing Activities cards to minimum size*/
     .ar-card {
         max-height: 170px;
+        width: 250px;
     }
 
     /* Changing footer orientation to column and centering its content  */
     footer {
+        font-size: 16px;
         display: flex;
         flex-direction: column;
         align-items: center;

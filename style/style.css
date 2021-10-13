@@ -1,0 +1,680 @@
+/******************* VARIABLES *******************/
+:root {
+
+    /* Default colors */
+    --clr-blue: #0065FC;
+    --clr-light-blue: #DEEBFF;
+    --clr-light-grey: #F2F2F2;
+    --clr-text-default: #000;
+
+    /* FontAwesome icons */
+    --fa-eco: "\f53a";
+    --fa-fam: "\f1ae";
+    --fa-rom: "\f004";
+    --fa-ani: "\f6d3";
+    --fa-info: "\f129";
+
+    /* Titles font weight */
+    --fw-bold: 700;
+    
+    /*Card font size*/
+    --fs--small: 16px;
+
+    /* Box shadow */
+    --box-shadow: 0px 1px 1px 2px rgba(0, 0, 0, 0.2);
+    --box-shadow-hover: 0px 5px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+/**************** [GLOBAL] SETTINGS ****************/
+/**************************************************/
+
+/* Custom CSS reset implemented before importing normalize.css */
+* {
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    font-size: 22px;
+}
+
+#welcome-title {
+    font-size: 30px;
+}
+
+/* Global link styling*/
+a {
+    text-decoration: none;
+    color:var(--clr-text-default);
+    cursor: pointer;
+    position: relative; /*Relation position for City Results card links*/
+    z-index: 3; /* Custom z-index for <a> to stay above .pseudo-element::after layer */
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Global section settings */
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-size: 30px;
+}
+
+
+
+/*********** HEADER AND NAVIGATION MENU ************/
+/**************************************************/
+
+header {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    margin-bottom: 50px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-booki {
+    height: 60px;
+}
+
+.links-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+    min-width: 200px;
+}
+
+.nav-link:link, .nav-link:visited {
+    border: 2px solid transparent;
+    display: flex;
+}
+
+.nav-link:hover, .nav-link:active {
+    color: var(--clr-blue);
+    border-top: 2px solid var(--clr-blue);
+}
+
+
+/**************** WELCOME SECTION *****************/
+/**************************************************/
+
+#welcome-section {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    margin-bottom: 50px;
+}
+
+/************* SEARCH FORM AND FILTERS *************/
+/**************************************************/
+
+#search-section {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+
+.fa-map-marker-alt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 60px;
+    background-color: var(--clr-light-grey);    
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#search-input-container input {
+    border: none;
+    border-top: 1px solid var(--clr-light-grey);
+    border-bottom: 1px solid var(--clr-light-grey);
+    padding: 0 16px 0 10px;
+    height: 60px;
+    font-weight: var(--fw-bold);
+}
+
+#search-btn-full {
+    background-color: var(--clr-blue);
+    color: white;
+    border: none;
+    height: 60px;
+    padding: 0 16px 0 16px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+#search-btn-icn {
+    display: none;
+    background-color: var(--clr-blue);
+    font-size: 24px;
+    color: white;
+    border: none;
+    height: 60px;
+    width: 60px;
+    margin-left: -20px;
+    border-radius: 15px;
+}
+
+
+/*---- Search filters ----*/
+
+#search-filters {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.filter {
+    background-color: white;
+    align-content: center;
+    margin: 16px;
+    height: 60px;
+    padding: 5px 15px 5px 5px;
+    font-weight: var(--fw-bold);
+    font-size: 24px;
+    border: 2px solid var(--clr-light-grey);
+    border-radius: 50px;
+}
+
+.filter:hover {
+    color: white;
+    background-color: var(--clr-blue);
+    border-color:var(--clr-blue);
+}
+
+
+/*---- Filter icons ----*/
+
+button.filter::before {
+
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    border : 1px solid var(--clr-light-blue);
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: -15px;
+    background-color: var(--clr-light-blue);
+    border-radius: 50%;
+    color: var(--clr-blue);
+}
+
+button#eco::before {
+    content: var(--fa-eco);
+    padding: 15px 14px;
+}
+
+button#fam::before {
+    content: var(--fa-fam);
+    padding: 15px 20px;
+}
+
+button#rom::before {
+    content: var(--fa-rom);
+    padding: 15px 17px;
+}
+
+button#ani::before {
+    content: var(--fa-ani);
+    padding: 15px 15px;
+}
+
+span.info::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: var(--fa-info);
+    padding : 4px 13px;
+    border : 1px solid var(--clr-light-grey);
+    border-radius: 50%;
+    color: var(--clr-blue);
+}
+
+
+/**************** [GLOBAL] CARD DESIGN ***************/
+/**** Applies to every type of cards in the page ****/
+
+.card {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    font-size: var(--fs--small);
+    transform: translateY(0px) scale(1);
+    transition: transform .25s ease;
+}
+
+
+/********** [GLOBAL] CARD SHADOW TRANSITION **********/
+/**** Applies to every type of cards in the page ****/
+
+.card:hover {
+    transform: translateY(-2px) scale(1.02);
+    transition: transform .25s ease;
+}
+
+.pseudo-hover {  
+    position: relative; 
+}
+
+.pseudo-hover::after { 
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 25px;
+    box-shadow: var(--box-shadow-hover);
+    transition: opacity .25s ease;
+}
+
+.cr-card.pseudo-hover::after {
+    margin: -5px;
+}
+
+.pseudo-hover:hover::after {
+    opacity: 1;
+    transition: opacity .25s ease;
+} 
+
+
+/****************************************************/
+/********** [GLOBAL] RATING STARS PROPERTIES ********/
+
+.fa-star {
+    color:var(--clr-blue);
+}
+
+.empty-star {
+    color:var(--clr-light-grey);
+}
+
+
+/****************************************************/
+/************** SECTION : ACCOMODATIONS *************/
+
+#results-section {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 50px 2%;
+}
+
+/* City results container */
+
+#city-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    flex: 1 1 65%;
+    padding: 50px;
+    gap: 40px 40px;
+    border-radius: 25px;
+    background-color: var(--clr-light-grey);
+}
+
+/* City Results: title */
+#cr-title {
+    width: 100%;
+}
+
+
+/* City Results : card design */
+
+.cr-card {
+    flex: 1 1 29%;
+    border: 5px solid white;
+    border-radius: 25px;
+    max-height: 260px;
+    min-width: 235px;
+    min-height: 235px;
+}
+
+.cr-card img {
+    height: 60%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.cr-card-details {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 15px;
+}
+
+
+.show-more {
+    width: 100%;
+    font-weight: var(--fw-bold); 
+    
+}
+
+/****************************************************/
+/********* CONTAINER : MOST POPULAR RESULTS *********/
+
+#most-popular-results {  
+    display: flex;
+    flex: 1 1 32%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 20px 0;
+    border-radius: 25px;
+    background-color: var(--clr-light-grey);
+}
+
+.mpr-title {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.fa-chart-line {
+    font-size: 30px;
+}
+
+
+/**************** CARD MOST POPULAR ****************/
+.mpr-card {
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    height: 175px;
+    min-width: 350px;
+}
+
+.mpr-card-details {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 15px 50px 0 0;
+    margin-left: 15px;
+    width: 60%;
+}
+
+.mpr-card-details > * {
+    margin-bottom: 16px;
+}
+
+.mpr-card-details p {
+    flex-grow: 1;
+}
+
+.mpr-card img {
+    
+    width: 40%;
+    object-fit: cover;
+    object-position: center;
+    border: 5px solid white;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+/********************************************************/
+/****************** ACTIVITIES RESULTS ******************/
+
+#activities-results {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    
+}
+
+#activities-results > h2 {
+    margin-bottom: 24px;
+}
+
+.ar-gallery {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px 0;
+    width : 100%;
+    justify-content: space-between;
+}
+
+.ar-gallery-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px 0;
+}
+
+/**************** ACTIVITIES RESULTS CARDS ****************/
+
+.ar-card {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 407px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.ar-card h3 {
+    display: flex;
+    height: 64px;
+    padding-left: 25px;
+    align-items: center;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.ar-card img {
+    object-fit: cover;
+    height: calc(100% - 64px);
+    width: 100%;
+    align-self: flex-end;        
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+/* ACTIVITIES RESULTS : CARDS HEIGHTS */
+
+.big {
+    
+    height: 600px;
+
+}
+
+.small-1 {
+    height: 320px;
+}
+
+.small-2 {
+    height: 220px;
+}
+
+.small-3 {
+    height: 260px;
+}
+
+.small-4 {
+    height: 275px;
+}
+
+
+/********************************************************/
+/*********************** FOOTER ************************/
+
+footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px 0 50px 0;
+    background-color: var(--clr-light-grey);
+}
+
+footer div {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    width: calc(100%/3);
+}
+
+ul {
+    list-style-type: none;
+}
+
+footer * {
+    margin-bottom: 1em;
+}
+
+/********************************************************/
+/******************** MEDIA QUERIES *********************/
+
+/*************** Tablet specific rules *******************/
+
+@media screen and (max-width: 991px) {
+
+    /* Centers the search input field */
+    #search-input-container {
+        justify-content: center;
+    }
+
+    /* Separating my title from the filter buttons */
+    #search-filters h3 {
+        width: 100%;
+    }
+
+    /* Switching from row to column */
+    .ar-gallery {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    /* Giving my big cards an intermediary max size */
+    .ar-card {
+        max-height: 400px;
+    }
+
+    /* Resizing footer text to keep fitting in flex row */
+    footer > div > ul > li > a {
+        font-size: 16px;
+    }
+} 
+
+/***************Mobile specific rules********************/
+
+@media screen and (max-width: 767px) {
+
+    /* Making my navigation menu use all viewport width */
+    header {
+        margin: 0;
+    }
+
+    #logo-booki {
+        height: 90px;
+    }
+
+    /* Centering navigation buttons*/
+    nav {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    .links-container {
+        width: 100%;
+    }
+    
+    /* Switching to bottom border on hover */
+    .nav-link, .nav-link:link, .nav-link:active {
+        width: 50%;
+        border: 2px solid transparent;
+        border-bottom: 2px solid var(--clr-light-grey);
+    }
+
+    .nav-link:hover, .nav-link:active {
+        color: var(--clr-blue);
+        border: none;
+        border-bottom: 2px solid var(--clr-blue);
+        
+    }
+
+    .fa-map-marker-alt {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    #search-btn-full {
+        display:none;
+    }
+    
+    #search-btn-icn {
+        display: initial;
+    }
+
+
+
+    /* Removing side margins as shown on mobile mockup */
+    #results-section {
+        margin: 0;
+    }
+
+    /* Switching city results to white background as in mockup*/
+    #city-results {
+        background-color: white;
+    }
+
+    /* Removing rounded borders */
+    #most-popular-results {
+        border-radius: 0;
+    }
+
+    /* Resizing Activities cards to minimum size*/
+    .ar-card {
+        max-height: 170px;
+    }
+
+    /* Changing footer orientation to column and centering its content  */
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--clr-light-grey);
+    }
+}

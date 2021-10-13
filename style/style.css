@@ -658,6 +658,7 @@ footer * {
     /* Switching city results to white background as in mockup*/
     #city-results {
         background-color: white;
+        flex-direction: column;
     }
 
     /* Removing rounded borders */

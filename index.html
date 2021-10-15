@@ -26,7 +26,7 @@
     <!-- HEADER NAVIGATION MENU -->
     <header>
         <nav>
-            <a href="#"><img src="assets/logo/Booki.png" alt="logo" id="logo-booki"></a>
+            <a href="#"><img src="assets/logo/Booki_fixed_padding.png" alt="logo" id="logo-booki"></a>
             
             <div class="links-container">
                 <a href="#city-results" class="nav-link">Hébergements</a>
@@ -282,62 +282,95 @@
             <h2 id="activities-results-title">Activités à Marseille</h2>   
 
             <div class="ar-gallery">
+
                 <!-- Colonne 1 : 1 grande carte -->
-                <article>
-                    <a href="#">
-                        <div class="card pseudo-hover ar-card big">
-                                <h3>Vieux Port</h3>
-                                <img src="assets/activites/4_small/vieux_port.jpg" alt="Vieux Port">
-                        </div>
-                    </a>
-                </article>
-                <!-- Colonne 1 : 2 petites cartes -->
-                <div class="ar-gallery-column">
-                    <article>
+                <div class="ar-gallery-column single">
+
+                    <article class="ar-card-container big">
                         <a href="#">
-                            <div class="card pseudo-hover ar-card small-1">
-                                <h3>Fort de Pomègues</h3>
-                                <img src="assets/activites/4_small/fort_de_pomegues.jpg" alt="Fort de Pomeges">
+                            <div class="card ar-card pseudo-hover">
+                                    <div class="ar-card-details">
+                                        <h3>Vieux Port</h3>
+                                    </div>
+                                    <img src="assets/activites/3_medium/med_vieux_port.jpg" alt="Vieux Port">
                             </div>
                         </a>
                     </article>
 
-                    <article class="card ar-card pseudo-hover small-2">
-                        <h3>Îles du Frioul</h3>
-                        <img src="assets/activites/4_small/iles_du_frioul.jpg" alt="Iles du Frioul">
+                </div>
+
+
+                <!-- Colonne 2 : 2 petites cartes -->
+
+                <div class="ar-gallery-column double">
+                    
+                    <article class="ar-card-container small-1">
+                        <a href="#">
+                            <div class="card ar-card pseudo-hover">
+                                <div class="ar-card-details">
+                                    <h3>Fort de Pomègues</h3>
+                                </div>
+                                <img src="assets/activites/3_medium/med_fort_de_pomegues.jpg" alt="Fort de Pomègues">
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="ar-card-container small-2">
+                        <a href="#">
+                            <div class="card ar-card pseudo-hover">
+                                <div class="ar-card-details">
+                                    <h3>Îles du Frioul</h3>
+                                </div>
+                                <img src="assets/activites/3_medium/med_iles_du_frioul.jpg" alt="Iles du Frioul">
+                            </div>
+                        </a>
                     </article>
                 </div>
+
+
                 <!-- Colonne 3 : 1 grande carte -->
-                <article>
-                    <a href="#">
-                        <div class="card pseudo-hover ar-card big">
-                            <h3>Parc National des Calanques</h3>
-                            <img src="assets/activites/4_small/parc_national_des_calanques.jpg" alt="Parc National des Calanques">
-                        </div>
-                    </a>
-                </article>             
-                
-                <!-- Colonne 4 : 2 petites carte -->
-                <div class="ar-gallery-column">
-                    <article>
+
+                <div class="ar-gallery-column single">
+
+                    <article class="ar-card-container big ">
                         <a href="#">
-                            <div class="card pseudo-hover ar-card small-3">
-                                <h3>Notre-Dame-de-la-Garde</h3>
-                                <img src="assets/activites/4_small/notre_dame_de_la_garde.jpg" alt="Notre Dame de la Garde">
+                            <div class="card ar-card pseudo-hover">
+                                <div class="ar-card-details">
+                                    <h3>Parc National des Calanques</h3>
+                                </div>
+                                <img src="assets/activites/3_medium/med_parc_national_des_calanques.jpg" alt="Parc National des Calanques">
+                            </div>
+                        </a>
+                    </article>             
+                </div>
+
+                <!-- Colonne 4 : 2 petites carte -->
+
+                <div class="ar-gallery-column double">
+
+                    <article class="ar-card-container small-3">
+                        <a href="#">
+                            <div class="card ar-card pseudo-hover">
+                                <div class="ar-card-details">
+                                    <h3>Notre-Dame-de-la-Garde</h3>
+                                </div>
+                                <img src="assets/activites/3_medium/med_notre_dame_de_la_garde.jpg" alt="Notre Dame de la Garde">
                             </div>
                         </a>
                     </article>
-                
-                    <article>
+                    <article class="ar-card-container small-4">
                         <a href="#">
-                            <div class="card pseudo-hover ar-card small-4">        
-                                <h3>Parc Longchamp</h3>
-                                <img src="assets/activites/4_small/parc_longchamp.jpg" alt="Parc Longchamp">
+                            <div class="card ar-card pseudo-hover">        
+                                <div class="ar-card-details">
+                                    <h3>Parc Longchamp</h3>
+                                </div>
+                                <img src="assets/activites/3_medium/med_parc_longchamp.jpg" alt="Parc Longchamp">
                             </div>
                         </a>
                     </article>
                 </div>
-            </div>
+
+            </div> <!--End of ar gallery-->
 
         </section>
     </main>

@@ -392,8 +392,7 @@ span.info::before {
 
 .show-more {
     width: 100%;
-    font-weight: var(--fw-bold); 
-    
+    font-weight: var(--fw-bold);  
 }
 
 /****************************************************/
@@ -463,7 +462,6 @@ span.info::before {
 #activities-results {
     margin-left: 3.5%;
     margin-right: 3.5%;
-    
 }
 
 #activities-results > h2 {
@@ -472,71 +470,62 @@ span.info::before {
 
 .ar-gallery {
     display: flex;
-    flex-flow: row wrap;
-    gap: 30px 0;
-    width : 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-content: flex-start;
+    padding: 50px 3% 50px 3%;
+    gap: 30px 1%;
 }
 
 .ar-gallery-column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    flex: 1 1 23%;
+    /* width: 100%; */
+    height: 600px;
     gap: 30px 0;
 }
 
 /**************** ACTIVITIES RESULTS CARDS ****************/
 
+
+.ar-card-container {
+    display: flex;
+    height: 100%;
+}
+
+.big {max-height: 600px;}
+.small-1 {max-height: 320px;}
+.small-2 {max-height: 220px;}
+.small-3 {max-height: 260px;}
+.small-4 {max-height: 275px;}
+
 .ar-card {
     display: flex;
     flex-direction: column-reverse;
-    width: 407px;
-    background-color: white;
+    /* overflow: hidden; */
     border-radius: 25px;
+    height: 100%;
+    min-width: 235px;
 }
 
-.ar-card h3 {
-    display: flex;
+.ar-card-details {
     height: 64px;
-    padding-left: 25px;
-    align-items: center;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 15px;
 }
 
 .ar-card img {
-    object-fit: cover;
-    height: calc(100% - 64px);
+    height: 100%;
     width: 100%;
-    align-self: flex-end;        
+    object-fit: cover;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }
-
-/* ACTIVITIES RESULTS : CARDS HEIGHTS */
-
-.big {
-    
-    height: 600px;
-
-}
-
-.small-1 {
-    height: 320px;
-}
-
-.small-2 {
-    height: 220px;
-}
-
-.small-3 {
-    height: 260px;
-}
-
-.small-4 {
-    height: 275px;
-}
-
 
 /********************************************************/
 /*********************** FOOTER ************************/
@@ -559,8 +548,12 @@ ul {
     list-style-type: none;
 }
 
-footer * {
-    margin-bottom: 1em;
+footer h3 {
+    margin-bottom: 20px;
+}
+footer li {
+    margin-bottom: 10px;
+
 }
 
 /********************************************************/
@@ -580,17 +573,20 @@ footer * {
         width: 100%;
     }
 
+    .show-more {
+        font-size: 18px;
+    }
+
     /* Switching from row to column */
     .ar-gallery {
         flex-direction: column;
-        align-items: center;
-        
+        align-content: center;
     }
 
-    /* Giving my big cards an intermediary max size */
-    .ar-card {
-        max-height: 400px;
+    .ar-gallery-column {
+        width: 80%;
     }
+   
 
     /* Resizing footer text to keep fitting in flex row */
     footer > div > ul > li > a {
@@ -678,7 +674,6 @@ footer * {
         padding: 20px;
         gap: 20px 0;
         border-radius: 0;
-        
     }
 
     .cr-card {
@@ -695,10 +690,23 @@ footer * {
         min-width: 250px;
     }
 
-    /* Resizing Activities cards to minimum size*/
-    .ar-card {
-        max-height: 170px;
-        width: 250px;
+    #activities-results {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #activities-results > h2 {
+        margin-left: 3.5%;
+    }
+
+    .ar-gallery-column {
+        width: 93%;
+    }
+
+    .ar-card-container {
+        display: flex;
+        height: 100%;
+        max-height: 200px;
     }
 
     /* Changing footer orientation to column and centering its content  */
@@ -708,5 +716,12 @@ footer * {
         flex-direction: column;
         justify-content: center;
         background-color: var(--clr-light-grey);
+        
+    }
+
+    footer div {
+        margin-left: 3.5%;
+        margin-bottom: 40px;
+        width: 100%;
     }
 }

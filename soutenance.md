@@ -106,6 +106,11 @@ Solution proposée : appliquer un z-index supérieur à mes lien.
     }
 ```
 
+Sources :
+[Documentation MDN : z-index](https://developer.mozilla.org/fr/docs/Web/CSS/z-index)
+[Q/A Stackoverflow](https://stackoverflow.com/questions/3032856/is-it-possible-to-set-the-stacking-order-of-pseudo-elements-below-their-parent-e)
+[Q/A Stackoverflow 2](https://stackoverflow.com/questions/2503705/how-to-get-a-child-element-to-show-behind-lower-z-index-than-its-parent)
+
 ### 5. Bilan du projet (2 minutes)
 
 #### Résultat

@@ -55,6 +55,10 @@ Solution proposée :
 - Définir une box-shadow finale (attributs multiples) pour un pseudo-élément lié à la carte
 - Appliquer une transition sur l'opacité du pseudo-élément (0 -> 1) plutôt que de modifier les attributs de box-shadow.
 
+Sources :
+[How to animate box-shadow with silky smooth performance - Tobias Ahlin](https://tobiasahlin.com/blog/layered-smooth-box-shadows/)
+[Smoother & sharper shadows with layered box-shadows - Tobias Ahlin](https://tobiasahlin.com/blog/how-to-animate-box-shadow/)
+
 ```css
     --box-shadow:           0px 1px 1px rgba(0, 0, 0, 0.12),
                             0px 2px 2px rgba(0, 0, 0, 0.12),

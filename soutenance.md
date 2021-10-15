@@ -41,7 +41,8 @@ Présenté sur Firefox via live-server
 
 #### Point de complexité 1 : animation de box-shadow
 
-En Material Design, les ombres sont complexes : 1 élément a plusieurs box-shadows. (génère un rendu plus réalistes qu'une ombre simple)
+En Material Design, les ombres sont complexes car un élément a plusieurs attributs pour sa propriété box-shadow. 
+Cela génère un rendu plus réalistes qu'une ombre simple.
 
 Problème posé :
 Appliquer une animation sur la propriété box-shadow peut poser des problèmes de performance.
@@ -54,6 +55,33 @@ Solution proposée :
 - Définir une box-shadow finale (attributs multiples) pour un pseudo-élément lié à la carte
 - Appliquer une transition sur l'opacité du pseudo-élément (0 -> 1) plutôt que de modifier les attributs de box-shadow.
 
+```css
+    --box-shadow:           0px 1px 1px rgba(0, 0, 0, 0.12),
+                            0px 2px 2px rgba(0, 0, 0, 0.12),
+                            0px 4px 4px rgba(0, 0, 0, 0.12),
+                            0px 8px 8px rgba(0, 0, 0, 0.12);    
+
+    --box-shadow-hover:     0px 2px 2px rgba(0, 0, 0, 0.14),
+                            0px 4px 4px rgba(0, 0, 0, 0.14),
+                            0px 8px 8px rgba(0, 0, 0, 0.14),
+                            0px 16px 16px rgba(0, 0, 0, 0.14);
+
+    .html-element {
+        box-shadow: var(--box-shadow)
+    }
+
+    .pseudo-hover::after { 
+    opacity: 0;
+    box-shadow: var(--box-shadow-hover);
+    transition: opacity .25s ease;
+    }
+
+    .pseudo-hover:hover::after {
+    opacity: 1;
+    transition: opacity .25s ease;
+    } 
+```
+
 #### Superposition des pseudo-éléments et des liens hypertextes
 
 Complexité générée par l'utilisation de pseudo-éléments par rapport à l'empilement des couches sur l'axe z (objectif : garder les liens au niveau le plus haut pour être cliquables)
@@ -63,6 +91,16 @@ Solution proposée : appliquer un z-index supérieur à mes lien.
 - Par défaut : mes éléments HTML ont un niveau 1
 - Par défaut : mes pseudo-éléments ont un niveau 2
 - Modifié : mes liens ont un niveau 3
+
+```css
+    a {
+        text-decoration: none;
+        color:var(--clr-text-default);
+        cursor: pointer;
+        position: relative; /* Relation position for City Results card links */
+        z-index: 3; /* Custom z-index for <a> links to stay on top of .pseudo-hover::after layer */
+    }
+```
 
 ### 5. Bilan du projet (2 minutes)
 

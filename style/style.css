@@ -1,4 +1,35 @@
-/******************* VARIABLES *******************/
+/* Index 
+
+0 || GLOBAL VARIABLES
+
+1 || GLOBAL SETTINGS
+    1.1 | GENERAL PAGE LAYOUT
+    1.2 | CARD DESIGN
+    1.3 | CARD SHADOW ANIMATION
+    1.4 | RATING STARS PROPERTIES
+
+2 || DESKTOP LAYOUT
+    2.1 | HEADER  : NAVIGATION MENU
+    2.2 | SECTION : WELCOME
+    2.3 | SECTION : SEARCH
+    2.4 | SECTION : ACCOMODATIONS RESULTS
+        2.4.1 | CONTAINER : CITY RESULTS
+        2.4.2 | CONTAINER : MOST POPULAR RESULTS
+    2.5 | SECTION : ACTIVITIES RESULTS
+    2.6 | FOOTER
+
+3 || MEDIA QUERIES SPECIFIC RULES
+    3.1 | TABLET MEDIA QUERY
+    3.2 | MOBILE MEDIA QUERY
+
+
+Tip: you can jump to a specific section by searching for index name or id. ex : [CTRL + F] "3 ||" or [CTRL + F] "2.4.1 |"
+
+*/
+
+
+/* ====================== 0 || GLOBAL VARIABLES ====================== */
+
 :root {
 
     /* Default colors */
@@ -25,10 +56,10 @@
     --box-shadow-hover: 0px 5px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
-/**************** [GLOBAL] SETTINGS ****************/
-/**************************************************/
+/* ====================== 1 || GLOBAL SETTINGS ====================== */
 
-/* Custom CSS reset implemented before importing normalize.css */
+/* ----------- 1.1 | GENERAL PAGE LAYOUT ----------- */
+
 * {
     font-family: 'Raleway', sans-serif;
     box-sizing: border-box;
@@ -41,37 +72,78 @@ html, body {
     font-size: 22px;
 }
 
-#welcome-title {
-    font-size: 30px;
-}
+#welcome-title {font-size: 30px;}
 
-/* Global link styling*/
 a {
     text-decoration: none;
     color:var(--clr-text-default);
     cursor: pointer;
-    position: relative; /*Relation position for City Results card links*/
-    z-index: 3; /* Custom z-index for <a> to stay above .pseudo-element::after layer */
+    position: relative; /* Relation position for City Results card links */
+    z-index: 3; /* Custom z-index for <a> links to stay on top of .pseudo-hover::after layer */
 }
 
-button {
-    cursor: pointer;
+button {cursor: pointer;}
+
+section {margin-bottom: 50px;}
+
+section h2 {font-size: 30px;}
+
+
+/* ----------- 1.2 | CARD DESIGN ----------- */
+/* Applies to every type of cards in the page */
+
+.card {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    font-size: var(--fs--small);
+    transform: translateY(0px) scale(1);
+    transition: transform .25s ease;
 }
 
-/* Global section settings */
 
-section {
-    margin-bottom: 50px;
+/* ----------- 1.3 | CARD SHADOW ANIMATION ----------- */
+/* Applies to every type of cards in the page */
+
+.card:hover {
+    transform: translateY(-2px) scale(1.02);
+    transition: transform .25s ease;
 }
 
-section h2 {
-    font-size: 30px;
+.pseudo-hover {position: relative;}
+
+.pseudo-hover::after { 
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 25px;
+    box-shadow: var(--box-shadow-hover);
+    transition: opacity .25s ease;
 }
 
+.cr-card.pseudo-hover::after {margin: -5px;}
+
+.pseudo-hover:hover::after {
+    opacity: 1;
+    transition: opacity .25s ease;
+} 
 
 
-/*********** HEADER AND NAVIGATION MENU ************/
-/**************************************************/
+/* ----------- 1.4 | RATING STARS PROPERTIES ----------- */
+
+/* Blue star */
+.fa-star {color:var(--clr-blue);}
+
+/* Grey star */
+.empty-star {color:var(--clr-light-grey);}
+
+
+/* ====================== 2 || DESKTOP LAYOUT ====================== */
+
+/* ----------- 2.1 | HEADER  : NAVIGATION MENU ----------- */
 
 header {
     margin-left: 3.5%;
@@ -115,8 +187,7 @@ nav {
 }
 
 
-/**************** WELCOME SECTION *****************/
-/**************************************************/
+/* ----------- 2.2 | SECTION : WELCOME ----------- */
 
 #welcome-section {
     margin-left: 3.5%;
@@ -124,8 +195,8 @@ nav {
     margin-bottom: 50px;
 }
 
-/************* SEARCH FORM AND FILTERS *************/
-/**************************************************/
+
+/* ----------- 2.3 | SECTION : SEARCH ----------- */
 
 #search-section {
     margin-left: 3.5%;
@@ -272,67 +343,7 @@ span.info::before {
 }
 
 
-/**************** [GLOBAL] CARD DESIGN ***************/
-/**** Applies to every type of cards in the page ****/
-
-.card {
-    background-color: white;
-    box-shadow: var(--box-shadow);
-    font-size: var(--fs--small);
-    transform: translateY(0px) scale(1);
-    transition: transform .25s ease;
-}
-
-
-/********** [GLOBAL] CARD SHADOW TRANSITION **********/
-/**** Applies to every type of cards in the page ****/
-
-.card:hover {
-    transform: translateY(-2px) scale(1.02);
-    transition: transform .25s ease;
-}
-
-.pseudo-hover {  
-    position: relative; 
-}
-
-.pseudo-hover::after { 
-    content:'';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    border-radius: 25px;
-    box-shadow: var(--box-shadow-hover);
-    transition: opacity .25s ease;
-}
-
-.cr-card.pseudo-hover::after {
-    margin: -5px;
-}
-
-.pseudo-hover:hover::after {
-    opacity: 1;
-    transition: opacity .25s ease;
-} 
-
-
-/****************************************************/
-/********** [GLOBAL] RATING STARS PROPERTIES ********/
-
-.fa-star {
-    color:var(--clr-blue);
-}
-
-.empty-star {
-    color:var(--clr-light-grey);
-}
-
-
-/****************************************************/
-/************** SECTION : ACCOMODATIONS *************/
+/* ----------- 2.4 | SECTION : ACCOMODATIONS RESULTS----------- */
 
 #results-section {
     margin-left: 3.5%;
@@ -342,7 +353,7 @@ span.info::before {
     gap: 50px 2%;
 }
 
-/* City results container */
+/* 2.4.1 | CONTAINER : CITY RESULTS */
 
 #city-results {
     display: flex;
@@ -356,14 +367,9 @@ span.info::before {
     background-color: var(--clr-light-grey);
 }
 
-/* City Results: title */
-#cr-title {
-    width: 100%;
-}
+#cr-title {width: 100%;}
 
-
-/* City Results : card design */
-
+/* City results cards */
 .cr-card {
     flex: 1 1 29%;
     border: 5px solid white;
@@ -389,14 +395,13 @@ span.info::before {
     margin-left: 15px;
 }
 
-
 .show-more {
     width: 100%;
     font-weight: var(--fw-bold);  
 }
 
-/****************************************************/
-/********* CONTAINER : MOST POPULAR RESULTS *********/
+
+/* 2.4.2 | CONTAINER : MOST POPULAR RESULTS */
 
 #most-popular-results {  
     display: flex;
@@ -415,12 +420,10 @@ span.info::before {
 
 }
 
-.fa-chart-line {
-    font-size: 30px;
-}
+.fa-chart-line {font-size: 30px;}
 
 
-/**************** CARD MOST POPULAR ****************/
+/* Most popular results cards */
 .mpr-card {
     display: flex;
     flex-direction: row;
@@ -456,16 +459,12 @@ span.info::before {
     border-bottom-left-radius: 25px;
 }
 
-/********************************************************/
-/****************** ACTIVITIES RESULTS ******************/
+
+/* ----------- 2.5 | SECTION : ACTIVITIES RESULTS ----------- */
 
 #activities-results {
     margin-left: 3.5%;
     margin-right: 3.5%;
-}
-
-#activities-results > h2 {
-    margin-bottom: 24px;
 }
 
 .ar-gallery {
@@ -473,8 +472,8 @@ span.info::before {
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: flex-start;
-    padding: 50px 3% 50px 3%;
-    gap: 30px 1%;
+    padding: 50px 0 50px 0;
+    gap: 20px 3%;
 }
 
 .ar-gallery-column {
@@ -482,18 +481,15 @@ span.info::before {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    flex: 1 1 23%;
-    /* width: 100%; */
+    flex: 1 1 22%;
     height: 600px;
-    gap: 30px 0;
+    min-width: 270px;
 }
 
-/**************** ACTIVITIES RESULTS CARDS ****************/
-
-
-.ar-card-container {
+.ar-container {
     display: flex;
     height: 100%;
+    width: 100%;
 }
 
 .big {max-height: 600px;}
@@ -502,24 +498,30 @@ span.info::before {
 .small-3 {max-height: 260px;}
 .small-4 {max-height: 275px;}
 
+
 .ar-card {
     display: flex;
     flex-direction: column-reverse;
-    /* overflow: hidden; */
+    overflow: hidden;
     border-radius: 25px;
     height: 100%;
+    width: 100%;
     min-width: 235px;
 }
 
 .ar-card-details {
-    height: 64px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-left: 15px;
 }
 
-.ar-card img {
+.ar-card-details h3 {
+    padding: 25px 0 25px 0;
+}
+
+.ar-img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -527,8 +529,8 @@ span.info::before {
     border-top-right-radius: 25px;
 }
 
-/********************************************************/
-/*********************** FOOTER ************************/
+
+/* ----------- 2.6 | FOOTER ----------- */
 
 footer {
     display: flex;
@@ -556,73 +558,52 @@ footer li {
 
 }
 
-/********************************************************/
-/******************** MEDIA QUERIES *********************/
 
-/*************** Tablet specific rules *******************/
+/* ====================== 3 || MEDIA QUERIES SPECIFIC RULES ====================== */
 
+/* ----------- 3.1 | TABLET MEDIA QUERY ----------- */
+
+/* Breakpoint : 991px and lower */
 @media screen and (max-width: 991px) {
 
-    /* Centers the search input field */
-    #search-input-container {
-        justify-content: center;
-    }
+    #search-input-container {justify-content: center;}
 
-    /* Separating my title from the filter buttons */
-    #search-filters h3 {
-        width: 100%;
-    }
+    #search-filters h3 {width: 100%;}
 
-    .show-more {
-        font-size: 18px;
-    }
+    .show-more {font-size: 18px;}
 
-    /* Switching from row to column */
-    .ar-gallery {
-        flex-direction: column;
-        align-content: center;
-    }
+    .ar-gallery {justify-content: center;}
 
     .ar-gallery-column {
-        width: 80%;
+        height: auto;
+        gap: 20px;
+        flex: 1 0 100%;
     }
-   
 
-    /* Resizing footer text to keep fitting in flex row */
-    footer > div > ul > li > a {
-        font-size: 16px;
-    }
+    .ar-card {height: 220px;}
+
+    footer > div > ul > li > a {font-size: 16px;}
 } 
 
-/***************Mobile specific rules********************/
+/* ----------- 3.2 | MOBILE MEDIA QUERY ----------- */
+/* Breakpoint : 767px and lower */
 
 @media screen and (max-width: 767px) {
 
-    /* Making my navigation menu use all viewport width */
-    header {
-        margin: 0;
-    }
+    header {margin: 0;}
 
-    #logo-booki {
-        height: 90px;
-    }
+    #logo-booki {height: 90px;}
 
-    /* Centering navigation buttons*/
     nav {
         width: 100%;
         justify-content: center;
         margin-bottom: 50px;
     }
-
-    .nav-link {
-        min-width: 100px;
-    }
-
-    .links-container {
-        width: 100%;
-    }
     
-    /* Switching to bottom border on hover */
+    .nav-link {min-width: 100px;}
+
+    .links-container {width: 100%;}
+    
     .nav-link, .nav-link:link, .nav-link:active {
         width: 50%;
         border: 2px solid transparent;
@@ -642,33 +623,26 @@ footer li {
         padding: 20px;
     }
 
-    /* Search section */
     #search-input-container input {
         padding: 0 5px 0 5px;
         height: 50px;
         font-size: 16px;
     }
 
-    #search-btn-full {
-        display:none;
-    }
+    #search-btn-full {display:none;}
     
-    #search-btn-icn {
-        display: initial;
-    }
-    /* Search filters */
+    #search-btn-icn {display: initial;}
+
     .filter {
         font-size: 16px;
         height: 50px;
     }
 
-    /* Removing side margins as shown on mobile mockup */
     #results-section {
         margin: 0;
         margin-bottom: 50px;
     }
 
-    /* Switching city results to white background as in mockup*/
     #city-results {
         background-color: white;
         padding: 20px;
@@ -676,10 +650,8 @@ footer li {
         border-radius: 0;
     }
 
-    .cr-card {
-        flex: 1 1 100%;
-    }
-    /* Removing rounded borders */
+    .cr-card {flex: 1 1 100%;}
+
     #most-popular-results {
         border-radius: 0;
         padding: 50px 25px 50px 25px;
@@ -690,26 +662,6 @@ footer li {
         min-width: 250px;
     }
 
-    #activities-results {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    #activities-results > h2 {
-        margin-left: 3.5%;
-    }
-
-    .ar-gallery-column {
-        width: 93%;
-    }
-
-    .ar-card-container {
-        display: flex;
-        height: 100%;
-        max-height: 200px;
-    }
-
-    /* Changing footer orientation to column and centering its content  */
     footer {
         font-size: 16px;
         display: flex;
